@@ -1,0 +1,11 @@
+configuration,target_sparsity,validation_realized_sparsity_pct,validation_accuracy_pct,validation_macro_f1,retained_dense_attention_mass_pct,relative_attention_output_error,gpu_median_forward_ms,gpu_slowdown_vs_dense,gpu_extra_ms_vs_dense,calibration_feasible,cuda_gpu,timing_batch_size,timing_precision,timing_repetitions
+dense,,0,93.75,0.937893,,,4.7387,1.0,0.0,,Tesla T4,1,fp32,30
+unmasked,,0.0,93.75,0.937893,,,5.2351,1.1048,0.4964,,Tesla T4,1,fp32,30
+A_25,25%,23.743,93.8859,0.939264,98.331,0.028504,7.3274,1.5463,2.5887,True,Tesla T4,1,fp32,30
+B_25,25%,25.676,93.8859,0.939264,97.808,0.035902,8.7006,1.8361,3.9619,True,Tesla T4,1,fp32,30
+C_25,25%,23.982,93.6141,0.936598,96.926,0.052057,7.5704,1.5976,2.8316,True,Tesla T4,1,fp32,30
+D_25,25%,25.553,94.0217,0.940647,95.047,0.078183,9.1714,1.9354,4.4327,True,Tesla T4,1,fp32,30
+A_50,50%,49.848,93.75,0.937892,88.394,0.15589,7.8335,1.6531,3.0948,True,Tesla T4,1,fp32,30
+B_50,50%,52.624,93.75,0.937888,79.977,0.244817,11.2443,2.3729,6.5056,True,Tesla T4,1,fp32,30
+C_50,50%,50.174,93.8859,0.93925,88.518,0.156361,10.761,2.2709,6.0223,True,Tesla T4,1,fp32,30
+D_50,50%,51.759,93.75,0.937899,84.734,0.19993,9.2752,1.9573,4.5365,True,Tesla T4,1,fp32,30

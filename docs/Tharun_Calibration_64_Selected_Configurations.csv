@@ -1,0 +1,9 @@
+label,method,target_pct,actual_sparsity_calib_pct,actual_sparsity_dense_mask_pct,p,top_k,cosine_similarity_threshold,retained_dense_mass_pct,topk_added_coarse_pct,protection_added_coarse_pct,matched,active
+A_25,Top-p,25,24.3162,24.4051,0.98,,,98.3102,0.0,0.0,True,True
+B_25,Top-p + similarity protection,25,25.8445,25.9557,0.97,,0.5,97.8414,0.0,2.8484,True,True
+C_25,Top-k union Top-p,25,24.2992,24.3769,0.95,32,,96.934,10.852,0.0,True,True
+D_25,Top-k union Top-p + similarity protection,25,24.6748,24.8619,0.65,32,0.55,95.3984,38.5438,9.7666,True,True
+A_50,Top-p,50,50.4536,50.9052,0.87,,,88.2801,0.0,0.0,True,True
+B_50,Top-p + similarity protection,50,50.8024,51.1091,0.65,,0.55,80.8698,0.0,21.8792,True,True
+C_50,Top-k union Top-p,50,50.746,51.1275,0.85,12,,88.444,2.5075,0.0,True,True
+D_50,Top-k union Top-p + similarity protection,50,50.3388,50.8309,0.65,16,0.5,85.5471,9.5096,12.7006,True,True

@@ -1,0 +1,21 @@
+{
+  "split": "val",
+  "variant": "dense",
+  "layer_indices": null,
+  "mask_config": null,
+  "scores": {
+    "n": 736,
+    "loss": 0.21394166905488615,
+    "accuracy": 0.9375,
+    "macro_f1": 0.9378928981014364
+  },
+  "diagnostics": {},
+  "checkpoint": "outputs/dense_full_pilot/best.pt",
+  "device": "cpu",
+  "latency": {
+    "median_ms": 39.96830799997042,
+    "repetitions": 20,
+    "timing_batch_size": 1,
+    "precision": "fp32"
+  }
+}

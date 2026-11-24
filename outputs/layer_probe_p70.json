@@ -1,0 +1,95 @@
+{
+  "split": "validation_only",
+  "checkpoint": "outputs/dense_head_pilot/best.pt",
+  "n_images": 128,
+  "p": 0.7,
+  "candidate_layers": [
+    3,
+    6,
+    8,
+    9,
+    10,
+    11
+  ],
+  "results": [
+    {
+      "layer": 3,
+      "mean_abs_logit_change": 0.13144159317016602,
+      "max_abs_logit_change": 0.9123173356056213,
+      "prediction_flip_fraction": 0.03125,
+      "attention": {
+        "retained_mass": 0.720612995326519,
+        "relative_output_error": 0.3624606467783451,
+        "realized_sparsity": 0.7536471597850323,
+        "coarse_entropy": 2.754815310239792,
+        "block_similarity": 0.642168428748846
+      }
+    },
+    {
+      "layer": 6,
+      "mean_abs_logit_change": 0.1066027507185936,
+      "max_abs_logit_change": 0.862145185470581,
+      "prediction_flip_fraction": 0.0078125,
+      "attention": {
+        "retained_mass": 0.7402907572686672,
+        "relative_output_error": 0.338563060387969,
+        "realized_sparsity": 0.6984365992248058,
+        "coarse_entropy": 3.142731472849846,
+        "block_similarity": 0.6688708923757076
+      }
+    },
+    {
+      "layer": 8,
+      "mean_abs_logit_change": 0.08293423801660538,
+      "max_abs_logit_change": 1.1249463558197021,
+      "prediction_flip_fraction": 0.0234375,
+      "attention": {
+        "retained_mass": 0.7341407276690006,
+        "relative_output_error": 0.3067174572497606,
+        "realized_sparsity": 0.668782826513052,
+        "coarse_entropy": 3.288706809282303,
+        "block_similarity": 0.6849631890654564
+      }
+    },
+    {
+      "layer": 9,
+      "mean_abs_logit_change": 0.07509145140647888,
+      "max_abs_logit_change": 0.5402100682258606,
+      "prediction_flip_fraction": 0.0,
+      "attention": {
+        "retained_mass": 0.7409900389611721,
+        "relative_output_error": 0.29397227242588997,
+        "realized_sparsity": 0.6053364090621471,
+        "coarse_entropy": 3.5180161148309708,
+        "block_similarity": 0.6896401606500149
+      }
+    },
+    {
+      "layer": 10,
+      "mean_abs_logit_change": 0.07479137927293777,
+      "max_abs_logit_change": 0.5405664443969727,
+      "prediction_flip_fraction": 0.0234375,
+      "attention": {
+        "retained_mass": 0.7263871803879738,
+        "relative_output_error": 0.367049265652895,
+        "realized_sparsity": 0.5908702686429024,
+        "coarse_entropy": 3.5682598501443863,
+        "block_similarity": 0.728731881827116
+      }
+    },
+    {
+      "layer": 11,
+      "mean_abs_logit_change": 2.690723874820833e-07,
+      "max_abs_logit_change": 2.384185791015625e-06,
+      "prediction_flip_fraction": 0.0,
+      "attention": {
+        "retained_mass": 0.664136104285717,
+        "relative_output_error": 0.4944868665188551,
+        "realized_sparsity": 0.6988993398845196,
+        "coarse_entropy": 3.266657277941704,
+        "block_similarity": 0.770702850073576
+      }
+    }
+  ],
+  "warning": "Do not pick layers using the test split. The final block alone can have zero impact on CLS predictions."
+}

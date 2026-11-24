@@ -1,0 +1,42 @@
+{
+  "split": "val",
+  "variant": "C",
+  "layer_indices": [
+    3,
+    6,
+    9
+  ],
+  "mask_config": {
+    "method": "hybrid",
+    "p": 0.85,
+    "top_k": 12,
+    "similarity_threshold": null,
+    "grid_size": 14,
+    "tile_size": 2
+  },
+  "scores": {
+    "n": 736,
+    "loss": 0.21664529036016852,
+    "accuracy": 0.938858695652174,
+    "macro_f1": 0.9392502450627059
+  },
+  "diagnostics": {
+    "retained_mass": 0.885179895637692,
+    "relative_output_error": 0.1563607239420863,
+    "realized_sparsity": 0.5017363630991052,
+    "coarse_entropy": 3.150375608948694,
+    "block_similarity": 0.6905218533415726,
+    "topk_added_fraction": 0.024687466705156272,
+    "protection_added_fraction": 0.0,
+    "protected_query_block_fraction": 0.0,
+    "protected_key_block_fraction": 0.0
+  },
+  "checkpoint": "outputs/dense_full_pilot/best.pt",
+  "device": "cpu",
+  "latency": {
+    "median_ms": 47.676703999968595,
+    "repetitions": 20,
+    "timing_batch_size": 1,
+    "precision": "fp32"
+  }
+}
