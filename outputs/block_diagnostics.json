@@ -1,0 +1,3239 @@
+{
+  "split": "validation_only",
+  "device": "cpu",
+  "checkpoint_sha256": "ca12f33e158e30c08279ff8be5bd5b2a69be75e688a01eee59195fc3f198cb06",
+  "images": 111,
+  "seed": 42,
+  "images_per_class": 3,
+  "image_indices": [
+    2,
+    56,
+    168,
+    197,
+    212,
+    229,
+    246,
+    283,
+    312,
+    330,
+    354,
+    414,
+    516,
+    533,
+    549,
+    557,
+    585,
+    624,
+    676,
+    682,
+    711,
+    782,
+    788,
+    794,
+    828,
+    843,
+    849,
+    874,
+    941,
+    960,
+    963,
+    1024,
+    1116,
+    1132,
+    1148,
+    1153,
+    1226,
+    1247,
+    1287,
+    1306,
+    1339,
+    1349,
+    1369,
+    1419,
+    1430,
+    1447,
+    1467,
+    1507,
+    1529,
+    1564,
+    1640,
+    1660,
+    1685,
+    1701,
+    1771,
+    1811,
+    1870,
+    1878,
+    1907,
+    1918,
+    1950,
+    1970,
+    1991,
+    2009,
+    2103,
+    2128,
+    2149,
+    2231,
+    2241,
+    2267,
+    2291,
+    2295,
+    2330,
+    2338,
+    2352,
+    2453,
+    2471,
+    2528,
+    2543,
+    2565,
+    2675,
+    2712,
+    2770,
+    2775,
+    2785,
+    2867,
+    2876,
+    2913,
+    2919,
+    2931,
+    2939,
+    2985,
+    3043,
+    3048,
+    3094,
+    3179,
+    3188,
+    3270,
+    3306,
+    3343,
+    3392,
+    3429,
+    3447,
+    3472,
+    3505,
+    3567,
+    3578,
+    3581,
+    3599,
+    3635,
+    3670
+  ],
+  "layers": [
+    3,
+    6,
+    9
+  ],
+  "fields": [
+    "q_similarity",
+    "mean_key_similarity",
+    "coarse_entropy",
+    "retained_mass",
+    "relative_output_error",
+    "realized_sparsity"
+  ],
+  "note": "Identical dense layer inputs; patch query blocks only, CLS keys retained. Descriptive block-level correlations, not independent observations or causal effects. Shared quartile cutpoints per layer; ties can produce unequal or empty bins. No masked-model propagation.",
+  "results": {
+    "3": {
+      "A_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.6273928880691528,
+          "mean_key_similarity": 0.664048969745636,
+          "coarse_entropy": 2.7563953399658203,
+          "retained_mass": 0.9811328649520874,
+          "relative_output_error": 0.030770305544137955,
+          "realized_sparsity": 0.36028027534484863
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.5669381022453308,
+              0.6345865726470947,
+              0.6939666867256165
+            ],
+            "spearman_rho_error": -0.007611028580260411,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.49463698267936707,
+                  "mean_key_similarity": 0.6617841124534607,
+                  "coarse_entropy": 2.9820683002471924,
+                  "retained_mass": 0.980522632598877,
+                  "relative_output_error": 0.03068319335579872,
+                  "realized_sparsity": 0.28172338008880615
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6032091379165649,
+                  "mean_key_similarity": 0.6678633689880371,
+                  "coarse_entropy": 2.7071123123168945,
+                  "retained_mass": 0.9810814261436462,
+                  "relative_output_error": 0.031226200982928276,
+                  "realized_sparsity": 0.376267671585083
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6636278033256531,
+                  "mean_key_similarity": 0.6676353216171265,
+                  "coarse_entropy": 2.6482741832733154,
+                  "retained_mass": 0.981240451335907,
+                  "relative_output_error": 0.03085796907544136,
+                  "realized_sparsity": 0.3980502188205719
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7480630874633789,
+                  "mean_key_similarity": 0.6589782238006592,
+                  "coarse_entropy": 2.6881396770477295,
+                  "retained_mass": 0.9816787838935852,
+                  "relative_output_error": 0.03031385876238346,
+                  "realized_sparsity": 0.38502928614616394
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              1.82621431350708,
+              2.948380470275879,
+              3.67120361328125
+            ],
+            "spearman_rho_error": 0.7020480248704649,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6672848463058472,
+                  "mean_key_similarity": 0.8026733994483948,
+                  "coarse_entropy": 1.5416408777236938,
+                  "retained_mass": 0.9792869091033936,
+                  "relative_output_error": 0.021916987374424934,
+                  "realized_sparsity": 0.7462170124053955
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6141040921211243,
+                  "mean_key_similarity": 0.7196184992790222,
+                  "coarse_entropy": 2.421194076538086,
+                  "retained_mass": 0.9789526462554932,
+                  "relative_output_error": 0.025912029668688774,
+                  "realized_sparsity": 0.45879292488098145
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.568962037563324,
+                  "mean_key_similarity": 0.6254363059997559,
+                  "coarse_entropy": 3.3129162788391113,
+                  "retained_mass": 0.981316089630127,
+                  "relative_output_error": 0.03321811556816101,
+                  "realized_sparsity": 0.1825108379125595
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.6592092514038086,
+                  "mean_key_similarity": 0.5085555911064148,
+                  "coarse_entropy": 3.7495858669281006,
+                  "retained_mass": 0.9849663972854614,
+                  "relative_output_error": 0.04203123599290848,
+                  "realized_sparsity": 0.05363182723522186
+                }
+              }
+            ]
+          }
+        }
+      },
+      "B_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.6273928880691528,
+          "mean_key_similarity": 0.664048969745636,
+          "coarse_entropy": 2.7563953399658203,
+          "retained_mass": 0.977199375629425,
+          "relative_output_error": 0.035546429455280304,
+          "realized_sparsity": 0.36078107357025146
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.5669381022453308,
+              0.6345865726470947,
+              0.6939666867256165
+            ],
+            "spearman_rho_error": 0.22577752836088513,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.49463698267936707,
+                  "mean_key_similarity": 0.6617841124534607,
+                  "coarse_entropy": 2.9820683002471924,
+                  "retained_mass": 0.9852781891822815,
+                  "relative_output_error": 0.022850075736641884,
+                  "realized_sparsity": 0.19506531953811646
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6032091379165649,
+                  "mean_key_similarity": 0.6678633689880371,
+                  "coarse_entropy": 2.7071123123168945,
+                  "retained_mass": 0.9736672043800354,
+                  "relative_output_error": 0.04141760244965553,
+                  "realized_sparsity": 0.41023990511894226
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6636278033256531,
+                  "mean_key_similarity": 0.6676353216171265,
+                  "coarse_entropy": 2.6482741832733154,
+                  "retained_mass": 0.9741646647453308,
+                  "relative_output_error": 0.04031801596283913,
+                  "realized_sparsity": 0.4288122355937958
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7480630874633789,
+                  "mean_key_similarity": 0.6589782238006592,
+                  "coarse_entropy": 2.6881396770477295,
+                  "retained_mass": 0.9756815433502197,
+                  "relative_output_error": 0.03759930655360222,
+                  "realized_sparsity": 0.40894463658332825
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              1.82621431350708,
+              2.948380470275879,
+              3.67120361328125
+            ],
+            "spearman_rho_error": 0.36418912571709156,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6672848463058472,
+                  "mean_key_similarity": 0.8026733994483948,
+                  "coarse_entropy": 1.5416408777236938,
+                  "retained_mass": 0.9694800972938538,
+                  "relative_output_error": 0.031861141324043274,
+                  "realized_sparsity": 0.7877494692802429
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6141040921211243,
+                  "mean_key_similarity": 0.7196184992790222,
+                  "coarse_entropy": 2.421194076538086,
+                  "retained_mass": 0.9743487238883972,
+                  "relative_output_error": 0.030048973858356476,
+                  "realized_sparsity": 0.45860913395881653
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.568962037563324,
+                  "mean_key_similarity": 0.6254363059997559,
+                  "coarse_entropy": 3.3129162788391113,
+                  "retained_mass": 0.9829835295677185,
+                  "relative_output_error": 0.03150094673037529,
+                  "realized_sparsity": 0.13532139360904694
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.6592092514038086,
+                  "mean_key_similarity": 0.5085555911064148,
+                  "coarse_entropy": 3.7495858669281006,
+                  "retained_mass": 0.9819774627685547,
+                  "relative_output_error": 0.048771198838949203,
+                  "realized_sparsity": 0.06147558242082596
+                }
+              }
+            ]
+          }
+        }
+      },
+      "C_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.6273928880691528,
+          "mean_key_similarity": 0.664048969745636,
+          "coarse_entropy": 2.7563953399658203,
+          "retained_mass": 0.9752414226531982,
+          "relative_output_error": 0.04594670608639717,
+          "realized_sparsity": 0.2732129991054535
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.5669381022453308,
+              0.6345865726470947,
+              0.6939666867256165
+            ],
+            "spearman_rho_error": -0.08956795532783535,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.49463698267936707,
+                  "mean_key_similarity": 0.6617841124534607,
+                  "coarse_entropy": 2.9820683002471924,
+                  "retained_mass": 0.9682580232620239,
+                  "relative_output_error": 0.0490659661591053,
+                  "realized_sparsity": 0.3007289171218872
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6032091379165649,
+                  "mean_key_similarity": 0.6678633689880371,
+                  "coarse_entropy": 2.7071123123168945,
+                  "retained_mass": 0.9765221476554871,
+                  "relative_output_error": 0.04532446712255478,
+                  "realized_sparsity": 0.2738562822341919
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6636278033256531,
+                  "mean_key_similarity": 0.6676353216171265,
+                  "coarse_entropy": 2.6482741832733154,
+                  "retained_mass": 0.9781509041786194,
+                  "relative_output_error": 0.043975409120321274,
+                  "realized_sparsity": 0.26529359817504883
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7480630874633789,
+                  "mean_key_similarity": 0.6589782238006592,
+                  "coarse_entropy": 2.6881396770477295,
+                  "retained_mass": 0.9780168533325195,
+                  "relative_output_error": 0.04542135074734688,
+                  "realized_sparsity": 0.2528855800628662
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              1.82621431350708,
+              2.948380470275879,
+              3.67120361328125
+            ],
+            "spearman_rho_error": 0.9242603179745607,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6672848463058472,
+                  "mean_key_similarity": 0.8026733994483948,
+                  "coarse_entropy": 1.5416408777236938,
+                  "retained_mass": 0.9990255236625671,
+                  "relative_output_error": 0.0012055033585056663,
+                  "realized_sparsity": 0.345180869102478
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6141040921211243,
+                  "mean_key_similarity": 0.7196184992790222,
+                  "coarse_entropy": 2.421194076538086,
+                  "retained_mass": 0.985120415687561,
+                  "relative_output_error": 0.019275248050689697,
+                  "realized_sparsity": 0.3445882201194763
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.568962037563324,
+                  "mean_key_similarity": 0.6254363059997559,
+                  "coarse_entropy": 3.3129162788391113,
+                  "retained_mass": 0.958932638168335,
+                  "relative_output_error": 0.06746040284633636,
+                  "realized_sparsity": 0.2781083285808563
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.6592092514038086,
+                  "mean_key_similarity": 0.5085555911064148,
+                  "coarse_entropy": 3.7495858669281006,
+                  "retained_mass": 0.9578744769096375,
+                  "relative_output_error": 0.09583358466625214,
+                  "realized_sparsity": 0.12493737041950226
+                }
+              }
+            ]
+          }
+        }
+      },
+      "D_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.6273928880691528,
+          "mean_key_similarity": 0.664048969745636,
+          "coarse_entropy": 2.7563953399658203,
+          "retained_mass": 0.9749839305877686,
+          "relative_output_error": 0.04781370982527733,
+          "realized_sparsity": 0.2140122950077057
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.5669381022453308,
+              0.6345865726470947,
+              0.6939666867256165
+            ],
+            "spearman_rho_error": 0.4658606120498172,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.49463698267936707,
+                  "mean_key_similarity": 0.6617841124534607,
+                  "coarse_entropy": 2.9820683002471924,
+                  "retained_mass": 0.9941229224205017,
+                  "relative_output_error": 0.01086090225726366,
+                  "realized_sparsity": 0.05074416473507881
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6032091379165649,
+                  "mean_key_similarity": 0.6678633689880371,
+                  "coarse_entropy": 2.7071123123168945,
+                  "retained_mass": 0.9679805636405945,
+                  "relative_output_error": 0.060584887862205505,
+                  "realized_sparsity": 0.27788975834846497
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6636278033256531,
+                  "mean_key_similarity": 0.6676353216171265,
+                  "coarse_entropy": 2.6482741832733154,
+                  "retained_mass": 0.9685930609703064,
+                  "relative_output_error": 0.05992286279797554,
+                  "realized_sparsity": 0.27178072929382324
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7480630874633789,
+                  "mean_key_similarity": 0.6589782238006592,
+                  "coarse_entropy": 2.6881396770477295,
+                  "retained_mass": 0.9692233204841614,
+                  "relative_output_error": 0.059883832931518555,
+                  "realized_sparsity": 0.2555692493915558
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              1.82621431350708,
+              2.948380470275879,
+              3.67120361328125
+            ],
+            "spearman_rho_error": 0.5656422510359151,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6672848463058472,
+                  "mean_key_similarity": 0.8026733994483948,
+                  "coarse_entropy": 1.5416408777236938,
+                  "retained_mass": 0.9990798234939575,
+                  "relative_output_error": 0.0011356576578691602,
+                  "realized_sparsity": 0.3341388404369354
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6141040921211243,
+                  "mean_key_similarity": 0.7196184992790222,
+                  "coarse_entropy": 2.421194076538086,
+                  "retained_mass": 0.9921982884407043,
+                  "relative_output_error": 0.010010726749897003,
+                  "realized_sparsity": 0.23363074660301208
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.568962037563324,
+                  "mean_key_similarity": 0.6254363059997559,
+                  "coarse_entropy": 3.3129162788391113,
+                  "retained_mass": 0.9728731513023376,
+                  "relative_output_error": 0.05128026381134987,
+                  "realized_sparsity": 0.1384778469800949
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.6592092514038086,
+                  "mean_key_similarity": 0.5085555911064148,
+                  "coarse_entropy": 3.7495858669281006,
+                  "retained_mass": 0.9357767701148987,
+                  "relative_output_error": 0.1288089156150818,
+                  "realized_sparsity": 0.14976990222930908
+                }
+              }
+            ]
+          }
+        }
+      },
+      "A_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.6273928880691528,
+          "mean_key_similarity": 0.664048969745636,
+          "coarse_entropy": 2.7563953399658203,
+          "retained_mass": 0.8733222484588623,
+          "relative_output_error": 0.16884514689445496,
+          "realized_sparsity": 0.6094465255737305
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.5669381022453308,
+              0.6345865726470947,
+              0.6939666867256165
+            ],
+            "spearman_rho_error": 0.06190794465715699,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.49463698267936707,
+                  "mean_key_similarity": 0.6617841124534607,
+                  "coarse_entropy": 2.9820683002471924,
+                  "retained_mass": 0.873479962348938,
+                  "relative_output_error": 0.1616773158311844,
+                  "realized_sparsity": 0.5864457488059998
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6032091379165649,
+                  "mean_key_similarity": 0.6678633689880371,
+                  "coarse_entropy": 2.7071123123168945,
+                  "retained_mass": 0.8728914260864258,
+                  "relative_output_error": 0.17291297018527985,
+                  "realized_sparsity": 0.621215283870697
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6636278033256531,
+                  "mean_key_similarity": 0.6676353216171265,
+                  "coarse_entropy": 2.6482741832733154,
+                  "retained_mass": 0.8726162314414978,
+                  "relative_output_error": 0.1722337156534195,
+                  "realized_sparsity": 0.6247209310531616
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7480630874633789,
+                  "mean_key_similarity": 0.6589782238006592,
+                  "coarse_entropy": 2.6881396770477295,
+                  "retained_mass": 0.8743009567260742,
+                  "relative_output_error": 0.16855749487876892,
+                  "realized_sparsity": 0.6053470373153687
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              1.82621431350708,
+              2.948380470275879,
+              3.67120361328125
+            ],
+            "spearman_rho_error": 0.5719734338737738,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6672848463058472,
+                  "mean_key_similarity": 0.8026733994483948,
+                  "coarse_entropy": 1.5416408777236938,
+                  "retained_mass": 0.8665632605552673,
+                  "relative_output_error": 0.14213350415229797,
+                  "realized_sparsity": 0.9085015058517456
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6141040921211243,
+                  "mean_key_similarity": 0.7196184992790222,
+                  "coarse_entropy": 2.421194076538086,
+                  "retained_mass": 0.8669452667236328,
+                  "relative_output_error": 0.14599016308784485,
+                  "realized_sparsity": 0.7651132345199585
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.568962037563324,
+                  "mean_key_similarity": 0.6254363059997559,
+                  "coarse_entropy": 3.3129162788391113,
+                  "retained_mass": 0.875374972820282,
+                  "relative_output_error": 0.17257706820964813,
+                  "realized_sparsity": 0.4932391047477722
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.6592092514038086,
+                  "mean_key_similarity": 0.5085555911064148,
+                  "coarse_entropy": 3.7495858669281006,
+                  "retained_mass": 0.884402334690094,
+                  "relative_output_error": 0.21466925740242004,
+                  "realized_sparsity": 0.2709643542766571
+                }
+              }
+            ]
+          }
+        }
+      },
+      "B_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.6273928880691528,
+          "mean_key_similarity": 0.664048969745636,
+          "coarse_entropy": 2.7563953399658203,
+          "retained_mass": 0.8233538269996643,
+          "relative_output_error": 0.2138868123292923,
+          "realized_sparsity": 0.4945763647556305
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.5669381022453308,
+              0.6345865726470947,
+              0.6939666867256165
+            ],
+            "spearman_rho_error": 0.37837233843736384,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.49463698267936707,
+                  "mean_key_similarity": 0.6617841124534607,
+                  "coarse_entropy": 2.9820683002471924,
+                  "retained_mass": 0.957300066947937,
+                  "relative_output_error": 0.05331125482916832,
+                  "realized_sparsity": 0.11523686349391937
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6032091379165649,
+                  "mean_key_similarity": 0.6678633689880371,
+                  "coarse_entropy": 2.7071123123168945,
+                  "retained_mass": 0.7686911821365356,
+                  "relative_output_error": 0.28865641355514526,
+                  "realized_sparsity": 0.640328049659729
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6636278033256531,
+                  "mean_key_similarity": 0.6676353216171265,
+                  "coarse_entropy": 2.6482741832733154,
+                  "retained_mass": 0.7767646312713623,
+                  "relative_output_error": 0.2712610363960266,
+                  "realized_sparsity": 0.6305462718009949
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7480630874633789,
+                  "mean_key_similarity": 0.6589782238006592,
+                  "coarse_entropy": 2.6881396770477295,
+                  "retained_mass": 0.7906603813171387,
+                  "relative_output_error": 0.2423122227191925,
+                  "realized_sparsity": 0.5922396183013916
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              1.82621431350708,
+              2.948380470275879,
+              3.67120361328125
+            ],
+            "spearman_rho_error": -0.4049178014645664,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6672848463058472,
+                  "mean_key_similarity": 0.8026733994483948,
+                  "coarse_entropy": 1.5416408777236938,
+                  "retained_mass": 0.7176507711410522,
+                  "relative_output_error": 0.30835244059562683,
+                  "realized_sparsity": 0.9241299629211426
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6141040921211243,
+                  "mean_key_similarity": 0.7196184992790222,
+                  "coarse_entropy": 2.421194076538086,
+                  "retained_mass": 0.7841064929962158,
+                  "relative_output_error": 0.22693513333797455,
+                  "realized_sparsity": 0.5954663753509521
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.568962037563324,
+                  "mean_key_similarity": 0.6254363059997559,
+                  "coarse_entropy": 3.3129162788391113,
+                  "retained_mass": 0.8982685804367065,
+                  "relative_output_error": 0.13341879844665527,
+                  "realized_sparsity": 0.2520758807659149
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.6592092514038086,
+                  "mean_key_similarity": 0.5085555911064148,
+                  "coarse_entropy": 3.7495858669281006,
+                  "retained_mass": 0.8933650851249695,
+                  "relative_output_error": 0.1868479996919632,
+                  "realized_sparsity": 0.206771582365036
+                }
+              }
+            ]
+          }
+        }
+      },
+      "C_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.6273928880691528,
+          "mean_key_similarity": 0.664048969745636,
+          "coarse_entropy": 2.7563953399658203,
+          "retained_mass": 0.8982769846916199,
+          "relative_output_error": 0.1451212465763092,
+          "realized_sparsity": 0.5775182247161865
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.5669381022453308,
+              0.6345865726470947,
+              0.6939666867256165
+            ],
+            "spearman_rho_error": -0.09439093861297855,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.49463698267936707,
+                  "mean_key_similarity": 0.6617841124534607,
+                  "coarse_entropy": 2.9820683002471924,
+                  "retained_mass": 0.8704699873924255,
+                  "relative_output_error": 0.16584379971027374,
+                  "realized_sparsity": 0.5956412553787231
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6032091379165649,
+                  "mean_key_similarity": 0.6678633689880371,
+                  "coarse_entropy": 2.7071123123168945,
+                  "retained_mass": 0.9012890458106995,
+                  "relative_output_error": 0.14370694756507874,
+                  "realized_sparsity": 0.583763599395752
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6636278033256531,
+                  "mean_key_similarity": 0.6676353216171265,
+                  "coarse_entropy": 2.6482741832733154,
+                  "retained_mass": 0.9097299575805664,
+                  "relative_output_error": 0.13495121896266937,
+                  "realized_sparsity": 0.5745639801025391
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7480630874633789,
+                  "mean_key_similarity": 0.6589782238006592,
+                  "coarse_entropy": 2.6881396770477295,
+                  "retained_mass": 0.911624014377594,
+                  "relative_output_error": 0.13598282635211945,
+                  "realized_sparsity": 0.5559902191162109
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              1.82621431350708,
+              2.948380470275879,
+              3.67120361328125
+            ],
+            "spearman_rho_error": 0.8848750010932891,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6672848463058472,
+                  "mean_key_similarity": 0.8026733994483948,
+                  "coarse_entropy": 1.5416408777236938,
+                  "retained_mass": 0.9773772954940796,
+                  "relative_output_error": 0.024135509505867958,
+                  "realized_sparsity": 0.7512398958206177
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6141040921211243,
+                  "mean_key_similarity": 0.7196184992790222,
+                  "coarse_entropy": 2.421194076538086,
+                  "retained_mass": 0.8933528661727905,
+                  "relative_output_error": 0.1190526932477951,
+                  "realized_sparsity": 0.7305190563201904
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.568962037563324,
+                  "mean_key_similarity": 0.6254363059997559,
+                  "coarse_entropy": 3.3129162788391113,
+                  "retained_mass": 0.8564515113830566,
+                  "relative_output_error": 0.19538672268390656,
+                  "realized_sparsity": 0.5262777805328369
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.6592092514038086,
+                  "mean_key_similarity": 0.5085555911064148,
+                  "coarse_entropy": 3.7495858669281006,
+                  "retained_mass": 0.8659424781799316,
+                  "relative_output_error": 0.24188311398029327,
+                  "realized_sparsity": 0.30197325348854065
+                }
+              }
+            ]
+          }
+        }
+      },
+      "D_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.6273928880691528,
+          "mean_key_similarity": 0.664048969745636,
+          "coarse_entropy": 2.7563953399658203,
+          "retained_mass": 0.9128446578979492,
+          "relative_output_error": 0.12556922435760498,
+          "realized_sparsity": 0.4692280888557434
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.5669381022453308,
+              0.6345865726470947,
+              0.6939666867256165
+            ],
+            "spearman_rho_error": 0.21907190780267627,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.49463698267936707,
+                  "mean_key_similarity": 0.6617841124534607,
+                  "coarse_entropy": 2.9820683002471924,
+                  "retained_mass": 0.9324609637260437,
+                  "relative_output_error": 0.09084423631429672,
+                  "realized_sparsity": 0.3103007674217224
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6032091379165649,
+                  "mean_key_similarity": 0.6678633689880371,
+                  "coarse_entropy": 2.7071123123168945,
+                  "retained_mass": 0.8997749090194702,
+                  "relative_output_error": 0.14432843029499054,
+                  "realized_sparsity": 0.5388501882553101
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6636278033256531,
+                  "mean_key_similarity": 0.6676353216171265,
+                  "coarse_entropy": 2.6482741832733154,
+                  "retained_mass": 0.9077112674713135,
+                  "relative_output_error": 0.13487781584262848,
+                  "realized_sparsity": 0.5266125202178955
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7480630874633789,
+                  "mean_key_similarity": 0.6589782238006592,
+                  "coarse_entropy": 2.6881396770477295,
+                  "retained_mass": 0.9114384055137634,
+                  "relative_output_error": 0.13222508132457733,
+                  "realized_sparsity": 0.5011506676673889
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              1.82621431350708,
+              2.948380470275879,
+              3.67120361328125
+            ],
+            "spearman_rho_error": 0.7068917118309678,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6672848463058472,
+                  "mean_key_similarity": 0.8026733994483948,
+                  "coarse_entropy": 1.5416408777236938,
+                  "retained_mass": 0.9879878163337708,
+                  "relative_output_error": 0.013136305846273899,
+                  "realized_sparsity": 0.6677994132041931
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6141040921211243,
+                  "mean_key_similarity": 0.7196184992790222,
+                  "coarse_entropy": 2.421194076538086,
+                  "retained_mass": 0.9414916634559631,
+                  "relative_output_error": 0.06583340466022491,
+                  "realized_sparsity": 0.5611833930015564
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.568962037563324,
+                  "mean_key_similarity": 0.6254363059997559,
+                  "coarse_entropy": 3.3129162788391113,
+                  "retained_mass": 0.8841738700866699,
+                  "relative_output_error": 0.15944203734397888,
+                  "realized_sparsity": 0.34477242827415466
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.6592092514038086,
+                  "mean_key_similarity": 0.5085555911064148,
+                  "coarse_entropy": 3.7495858669281006,
+                  "retained_mass": 0.8377505540847778,
+                  "relative_output_error": 0.26383155584335327,
+                  "realized_sparsity": 0.3032373785972595
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "6": {
+      "A_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7178384065628052,
+          "mean_key_similarity": 0.6992273330688477,
+          "coarse_entropy": 3.152617931365967,
+          "retained_mass": 0.982936680316925,
+          "relative_output_error": 0.030097298324108124,
+          "realized_sparsity": 0.25707051157951355
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6462756991386414,
+              0.7274632453918457,
+              0.7981507182121277
+            ],
+            "spearman_rho_error": -0.15087675954654128,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5726813673973083,
+                  "mean_key_similarity": 0.6825688481330872,
+                  "coarse_entropy": 3.3438639640808105,
+                  "retained_mass": 0.9825833439826965,
+                  "relative_output_error": 0.03183788061141968,
+                  "realized_sparsity": 0.18524371087551117
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6894505620002747,
+                  "mean_key_similarity": 0.6936853528022766,
+                  "coarse_entropy": 3.174443006515503,
+                  "retained_mass": 0.9823696613311768,
+                  "relative_output_error": 0.03171565756201744,
+                  "realized_sparsity": 0.25138336420059204
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7628198862075806,
+                  "mean_key_similarity": 0.7017302513122559,
+                  "coarse_entropy": 3.0942366123199463,
+                  "retained_mass": 0.982765793800354,
+                  "relative_output_error": 0.030060799792408943,
+                  "realized_sparsity": 0.27917954325675964
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.8463646769523621,
+                  "mean_key_similarity": 0.7188754677772522,
+                  "coarse_entropy": 2.997969150543213,
+                  "retained_mass": 0.9840273261070251,
+                  "relative_output_error": 0.026775721460580826,
+                  "realized_sparsity": 0.3124094605445862
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              2.760464906692505,
+              3.324960470199585,
+              3.6703946590423584
+            ],
+            "spearman_rho_error": 0.48917438417047804,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7600616812705994,
+                  "mean_key_similarity": 0.7691144347190857,
+                  "coarse_entropy": 2.2770915031433105,
+                  "retained_mass": 0.9816293716430664,
+                  "relative_output_error": 0.02308846451342106,
+                  "realized_sparsity": 0.5662954449653625
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7124623656272888,
+                  "mean_key_similarity": 0.7274022102355957,
+                  "coarse_entropy": 3.062243700027466,
+                  "retained_mass": 0.9814349412918091,
+                  "relative_output_error": 0.026941826567053795,
+                  "realized_sparsity": 0.2869996726512909
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6859711408615112,
+                  "mean_key_similarity": 0.6734806299209595,
+                  "coarse_entropy": 3.5224719047546387,
+                  "retained_mass": 0.9835790395736694,
+                  "relative_output_error": 0.03310553357005119,
+                  "realized_sparsity": 0.12006424367427826
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7128534913063049,
+                  "mean_key_similarity": 0.6268861889839172,
+                  "coarse_entropy": 3.7485222816467285,
+                  "retained_mass": 0.9851034283638,
+                  "relative_output_error": 0.03725166991353035,
+                  "realized_sparsity": 0.054920993745326996
+                }
+              }
+            ]
+          }
+        }
+      },
+      "B_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7178384065628052,
+          "mean_key_similarity": 0.6992273330688477,
+          "coarse_entropy": 3.152617931365967,
+          "retained_mass": 0.9763902425765991,
+          "relative_output_error": 0.03980940952897072,
+          "realized_sparsity": 0.2887497544288635
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6462756991386414,
+              0.7274632453918457,
+              0.7981507182121277
+            ],
+            "spearman_rho_error": -0.051783644665078454,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5726813673973083,
+                  "mean_key_similarity": 0.6825688481330872,
+                  "coarse_entropy": 3.3438639640808105,
+                  "retained_mass": 0.9781736731529236,
+                  "relative_output_error": 0.038242097944021225,
+                  "realized_sparsity": 0.201710507273674
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6894505620002747,
+                  "mean_key_similarity": 0.6936853528022766,
+                  "coarse_entropy": 3.174443006515503,
+                  "retained_mass": 0.9748950004577637,
+                  "relative_output_error": 0.04319282993674278,
+                  "realized_sparsity": 0.287960946559906
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7628198862075806,
+                  "mean_key_similarity": 0.7017302513122559,
+                  "coarse_entropy": 3.0942366123199463,
+                  "retained_mass": 0.9754722118377686,
+                  "relative_output_error": 0.040946438908576965,
+                  "realized_sparsity": 0.3155468702316284
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.8463646769523621,
+                  "mean_key_similarity": 0.7188754677772522,
+                  "coarse_entropy": 2.997969150543213,
+                  "retained_mass": 0.9770175218582153,
+                  "relative_output_error": 0.03685706853866577,
+                  "realized_sparsity": 0.34970322251319885
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              2.760464906692505,
+              3.324960470199585,
+              3.6703946590423584
+            ],
+            "spearman_rho_error": 0.3937588253852929,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7600616812705994,
+                  "mean_key_similarity": 0.7691144347190857,
+                  "coarse_entropy": 2.2770915031433105,
+                  "retained_mass": 0.9731594920158386,
+                  "relative_output_error": 0.03276849538087845,
+                  "realized_sparsity": 0.6175031065940857
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7124623656272888,
+                  "mean_key_similarity": 0.7274022102355957,
+                  "coarse_entropy": 3.062243700027466,
+                  "retained_mass": 0.9742962718009949,
+                  "relative_output_error": 0.03572510555386543,
+                  "realized_sparsity": 0.3279915750026703
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6859711408615112,
+                  "mean_key_similarity": 0.6734806299209595,
+                  "coarse_entropy": 3.5224719047546387,
+                  "retained_mass": 0.9785175919532776,
+                  "relative_output_error": 0.04204368218779564,
+                  "realized_sparsity": 0.13952264189720154
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7128534913063049,
+                  "mean_key_similarity": 0.6268861889839172,
+                  "coarse_entropy": 3.7485222816467285,
+                  "retained_mass": 0.9795846343040466,
+                  "relative_output_error": 0.048698242753744125,
+                  "realized_sparsity": 0.06997563689947128
+                }
+              }
+            ]
+          }
+        }
+      },
+      "C_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7178384065628052,
+          "mean_key_similarity": 0.6992273330688477,
+          "coarse_entropy": 3.152617931365967,
+          "retained_mass": 0.9704796075820923,
+          "relative_output_error": 0.05271652340888977,
+          "realized_sparsity": 0.2566186785697937
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6462756991386414,
+              0.7274632453918457,
+              0.7981507182121277
+            ],
+            "spearman_rho_error": -0.19728385955306077,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5726813673973083,
+                  "mean_key_similarity": 0.6825688481330872,
+                  "coarse_entropy": 3.3438639640808105,
+                  "retained_mass": 0.9644262790679932,
+                  "relative_output_error": 0.06157839298248291,
+                  "realized_sparsity": 0.24118168652057648
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6894505620002747,
+                  "mean_key_similarity": 0.6936853528022766,
+                  "coarse_entropy": 3.174443006515503,
+                  "retained_mass": 0.9699926972389221,
+                  "relative_output_error": 0.05472385510802269,
+                  "realized_sparsity": 0.25715523958206177
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7628198862075806,
+                  "mean_key_similarity": 0.7017302513122559,
+                  "coarse_entropy": 3.0942366123199463,
+                  "retained_mass": 0.9722592830657959,
+                  "relative_output_error": 0.05072356015443802,
+                  "realized_sparsity": 0.2591661512851715
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.8463646769523621,
+                  "mean_key_similarity": 0.7188754677772522,
+                  "coarse_entropy": 2.997969150543213,
+                  "retained_mass": 0.9752376675605774,
+                  "relative_output_error": 0.04384243115782738,
+                  "realized_sparsity": 0.26889216899871826
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              2.760464906692505,
+              3.324960470199585,
+              3.6703946590423584
+            ],
+            "spearman_rho_error": 0.8376615767187762,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7600616812705994,
+                  "mean_key_similarity": 0.7691144347190857,
+                  "coarse_entropy": 2.2770915031433105,
+                  "retained_mass": 0.9936286807060242,
+                  "relative_output_error": 0.008751965127885342,
+                  "realized_sparsity": 0.345061331987381
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7124623656272888,
+                  "mean_key_similarity": 0.7274022102355957,
+                  "coarse_entropy": 3.062243700027466,
+                  "retained_mass": 0.9721304774284363,
+                  "relative_output_error": 0.03906175494194031,
+                  "realized_sparsity": 0.3331921696662903
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6859711408615112,
+                  "mean_key_similarity": 0.6734806299209595,
+                  "coarse_entropy": 3.5224719047546387,
+                  "retained_mass": 0.957541286945343,
+                  "relative_output_error": 0.07590614259243011,
+                  "realized_sparsity": 0.22302955389022827
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7128534913063049,
+                  "mean_key_similarity": 0.6268861889839172,
+                  "coarse_entropy": 3.7485222816467285,
+                  "retained_mass": 0.9586192965507507,
+                  "relative_output_error": 0.0871376097202301,
+                  "realized_sparsity": 0.12516580522060394
+                }
+              }
+            ]
+          }
+        }
+      },
+      "D_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7178384065628052,
+          "mean_key_similarity": 0.6992273330688477,
+          "coarse_entropy": 3.152617931365967,
+          "retained_mass": 0.9484562873840332,
+          "relative_output_error": 0.08771488070487976,
+          "realized_sparsity": 0.2856249213218689
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6462756991386414,
+              0.7274632453918457,
+              0.7981507182121277
+            ],
+            "spearman_rho_error": 0.07842271178636984,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5726813673973083,
+                  "mean_key_similarity": 0.6825688481330872,
+                  "coarse_entropy": 3.3438639640808105,
+                  "retained_mass": 0.9560152292251587,
+                  "relative_output_error": 0.07394278794527054,
+                  "realized_sparsity": 0.21413928270339966
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6894505620002747,
+                  "mean_key_similarity": 0.6936853528022766,
+                  "coarse_entropy": 3.174443006515503,
+                  "retained_mass": 0.9431222081184387,
+                  "relative_output_error": 0.09784622490406036,
+                  "realized_sparsity": 0.3055917024612427
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7628198862075806,
+                  "mean_key_similarity": 0.7017302513122559,
+                  "coarse_entropy": 3.0942366123199463,
+                  "retained_mass": 0.9446878433227539,
+                  "relative_output_error": 0.09487945586442947,
+                  "realized_sparsity": 0.3085096776485443
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.8463646769523621,
+                  "mean_key_similarity": 0.7188754677772522,
+                  "coarse_entropy": 2.997969150543213,
+                  "retained_mass": 0.9499931931495667,
+                  "relative_output_error": 0.08419246226549149,
+                  "realized_sparsity": 0.31418678164482117
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              2.760464906692505,
+              3.324960470199585,
+              3.6703946590423584
+            ],
+            "spearman_rho_error": 0.7542716487602393,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7600616812705994,
+                  "mean_key_similarity": 0.7691144347190857,
+                  "coarse_entropy": 2.2770915031433105,
+                  "retained_mass": 0.9941162467002869,
+                  "relative_output_error": 0.008171322755515575,
+                  "realized_sparsity": 0.3359543979167938
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7124623656272888,
+                  "mean_key_similarity": 0.7274022102355957,
+                  "coarse_entropy": 3.062243700027466,
+                  "retained_mass": 0.9753387570381165,
+                  "relative_output_error": 0.03510749340057373,
+                  "realized_sparsity": 0.2983889877796173
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6859711408615112,
+                  "mean_key_similarity": 0.6734806299209595,
+                  "coarse_entropy": 3.5224719047546387,
+                  "retained_mass": 0.9375660419464111,
+                  "relative_output_error": 0.10919487476348877,
+                  "realized_sparsity": 0.2545492947101593
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7128534913063049,
+                  "mean_key_similarity": 0.6268861889839172,
+                  "coarse_entropy": 3.7485222816467285,
+                  "retained_mass": 0.8868138194084167,
+                  "relative_output_error": 0.19835925102233887,
+                  "realized_sparsity": 0.25355175137519836
+                }
+              }
+            ]
+          }
+        }
+      },
+      "A_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7178384065628052,
+          "mean_key_similarity": 0.6992273330688477,
+          "coarse_entropy": 3.152617931365967,
+          "retained_mass": 0.8840949535369873,
+          "relative_output_error": 0.15921646356582642,
+          "realized_sparsity": 0.5237494707107544
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6462756991386414,
+              0.7274632453918457,
+              0.7981507182121277
+            ],
+            "spearman_rho_error": -0.16500180755760316,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5726813673973083,
+                  "mean_key_similarity": 0.6825688481330872,
+                  "coarse_entropy": 3.3438639640808105,
+                  "retained_mass": 0.8825343251228333,
+                  "relative_output_error": 0.16680587828159332,
+                  "realized_sparsity": 0.46401968598365784
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6894505620002747,
+                  "mean_key_similarity": 0.6936853528022766,
+                  "coarse_entropy": 3.174443006515503,
+                  "retained_mass": 0.8806337714195251,
+                  "relative_output_error": 0.16707855463027954,
+                  "realized_sparsity": 0.520230233669281
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7628198862075806,
+                  "mean_key_similarity": 0.7017302513122559,
+                  "coarse_entropy": 3.0942366123199463,
+                  "retained_mass": 0.882830023765564,
+                  "relative_output_error": 0.1598687469959259,
+                  "realized_sparsity": 0.5406545996665955
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.8463646769523621,
+                  "mean_key_similarity": 0.7188754677772522,
+                  "coarse_entropy": 2.997969150543213,
+                  "retained_mass": 0.8903844356536865,
+                  "relative_output_error": 0.14311982691287994,
+                  "realized_sparsity": 0.570030152797699
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              2.760464906692505,
+              3.324960470199585,
+              3.6703946590423584
+            ],
+            "spearman_rho_error": 0.48442267140052303,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7600616812705994,
+                  "mean_key_similarity": 0.7691144347190857,
+                  "coarse_entropy": 2.2770915031433105,
+                  "retained_mass": 0.8836974501609802,
+                  "relative_output_error": 0.12625737488269806,
+                  "realized_sparsity": 0.8134514093399048
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7124623656272888,
+                  "mean_key_similarity": 0.7274022102355957,
+                  "coarse_entropy": 3.062243700027466,
+                  "retained_mass": 0.8781723976135254,
+                  "relative_output_error": 0.137535959482193,
+                  "realized_sparsity": 0.6115814447402954
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6859711408615112,
+                  "mean_key_similarity": 0.6734806299209595,
+                  "coarse_entropy": 3.5224719047546387,
+                  "retained_mass": 0.886415958404541,
+                  "relative_output_error": 0.17551998794078827,
+                  "realized_sparsity": 0.4014239013195038
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7128534913063049,
+                  "mean_key_similarity": 0.6268861889839172,
+                  "coarse_entropy": 3.7485222816467285,
+                  "retained_mass": 0.88809734582901,
+                  "relative_output_error": 0.19754621386528015,
+                  "realized_sparsity": 0.2685551345348358
+                }
+              }
+            ]
+          }
+        }
+      },
+      "B_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7178384065628052,
+          "mean_key_similarity": 0.6992273330688477,
+          "coarse_entropy": 3.152617931365967,
+          "retained_mass": 0.7713040113449097,
+          "relative_output_error": 0.2750155031681061,
+          "realized_sparsity": 0.5985103249549866
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6462756991386414,
+              0.7274632453918457,
+              0.7981507182121277
+            ],
+            "spearman_rho_error": 0.10431853200110196,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5726813673973083,
+                  "mean_key_similarity": 0.6825688481330872,
+                  "coarse_entropy": 3.3438639640808105,
+                  "retained_mass": 0.826464831829071,
+                  "relative_output_error": 0.21698442101478577,
+                  "realized_sparsity": 0.42943423986434937
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6894505620002747,
+                  "mean_key_similarity": 0.6936853528022766,
+                  "coarse_entropy": 3.174443006515503,
+                  "retained_mass": 0.750848114490509,
+                  "relative_output_error": 0.3049500286579132,
+                  "realized_sparsity": 0.6319140195846558
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7628198862075806,
+                  "mean_key_similarity": 0.7017302513122559,
+                  "coarse_entropy": 3.0942366123199463,
+                  "retained_mass": 0.7495433688163757,
+                  "relative_output_error": 0.2976050078868866,
+                  "realized_sparsity": 0.6508810520172119
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.8463646769523621,
+                  "mean_key_similarity": 0.7188754677772522,
+                  "coarse_entropy": 2.997969150543213,
+                  "retained_mass": 0.7583597898483276,
+                  "relative_output_error": 0.28051888942718506,
+                  "realized_sparsity": 0.6817547082901001
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              2.760464906692505,
+              3.324960470199585,
+              3.6703946590423584
+            ],
+            "spearman_rho_error": 0.19961333448928642,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7600616812705994,
+                  "mean_key_similarity": 0.7691144347190857,
+                  "coarse_entropy": 2.2770915031433105,
+                  "retained_mass": 0.7404844760894775,
+                  "relative_output_error": 0.26661694049835205,
+                  "realized_sparsity": 0.8640600442886353
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7124623656272888,
+                  "mean_key_similarity": 0.7274022102355957,
+                  "coarse_entropy": 3.062243700027466,
+                  "retained_mass": 0.7522572875022888,
+                  "relative_output_error": 0.24795064330101013,
+                  "realized_sparsity": 0.6735993027687073
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6859711408615112,
+                  "mean_key_similarity": 0.6734806299209595,
+                  "coarse_entropy": 3.5224719047546387,
+                  "retained_mass": 0.7982341647148132,
+                  "relative_output_error": 0.268309623003006,
+                  "realized_sparsity": 0.4740108251571655
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7128534913063049,
+                  "mean_key_similarity": 0.6268861889839172,
+                  "coarse_entropy": 3.7485222816467285,
+                  "retained_mass": 0.7942308187484741,
+                  "relative_output_error": 0.3171725273132324,
+                  "realized_sparsity": 0.38238516449928284
+                }
+              }
+            ]
+          }
+        }
+      },
+      "C_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7178384065628052,
+          "mean_key_similarity": 0.6992273330688477,
+          "coarse_entropy": 3.152617931365967,
+          "retained_mass": 0.8818845152854919,
+          "relative_output_error": 0.16385416686534882,
+          "realized_sparsity": 0.5309012532234192
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6462756991386414,
+              0.7274632453918457,
+              0.7981507182121277
+            ],
+            "spearman_rho_error": -0.19960176886237874,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5726813673973083,
+                  "mean_key_similarity": 0.6825688481330872,
+                  "coarse_entropy": 3.3438639640808105,
+                  "retained_mass": 0.8701932430267334,
+                  "relative_output_error": 0.18210436403751373,
+                  "realized_sparsity": 0.4887278974056244
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6894505620002747,
+                  "mean_key_similarity": 0.6936853528022766,
+                  "coarse_entropy": 3.174443006515503,
+                  "retained_mass": 0.8785406947135925,
+                  "relative_output_error": 0.17194265127182007,
+                  "realized_sparsity": 0.5301722884178162
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7628198862075806,
+                  "mean_key_similarity": 0.7017302513122559,
+                  "coarse_entropy": 3.0942366123199463,
+                  "retained_mass": 0.8850690722465515,
+                  "relative_output_error": 0.1600213199853897,
+                  "realized_sparsity": 0.5409478545188904
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.8463646769523621,
+                  "mean_key_similarity": 0.7188754677772522,
+                  "coarse_entropy": 2.997969150543213,
+                  "retained_mass": 0.8937280774116516,
+                  "relative_output_error": 0.14135299623012543,
+                  "realized_sparsity": 0.5636259913444519
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              2.760464906692505,
+              3.324960470199585,
+              3.6703946590423584
+            ],
+            "spearman_rho_error": 0.6967825769841544,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7600616812705994,
+                  "mean_key_similarity": 0.7691144347190857,
+                  "coarse_entropy": 2.2770915031433105,
+                  "retained_mass": 0.9277634024620056,
+                  "relative_output_error": 0.07962387800216675,
+                  "realized_sparsity": 0.7487725019454956
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7124623656272888,
+                  "mean_key_similarity": 0.7274022102355957,
+                  "coarse_entropy": 3.062243700027466,
+                  "retained_mass": 0.8604000806808472,
+                  "relative_output_error": 0.15506111085414886,
+                  "realized_sparsity": 0.6404168009757996
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6859711408615112,
+                  "mean_key_similarity": 0.6734806299209595,
+                  "coarse_entropy": 3.5224719047546387,
+                  "retained_mass": 0.869046151638031,
+                  "relative_output_error": 0.19749894738197327,
+                  "realized_sparsity": 0.4349994659423828
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7128534913063049,
+                  "mean_key_similarity": 0.6268861889839172,
+                  "coarse_entropy": 3.7485222816467285,
+                  "retained_mass": 0.8703266382217407,
+                  "relative_output_error": 0.22321704030036926,
+                  "realized_sparsity": 0.29934608936309814
+                }
+              }
+            ]
+          }
+        }
+      },
+      "D_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7178384065628052,
+          "mean_key_similarity": 0.6992273330688477,
+          "coarse_entropy": 3.152617931365967,
+          "retained_mass": 0.8377970457077026,
+          "relative_output_error": 0.21932107210159302,
+          "realized_sparsity": 0.566218376159668
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6462756991386414,
+              0.7274632453918457,
+              0.7981507182121277
+            ],
+            "spearman_rho_error": -0.06813432024745032,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5726813673973083,
+                  "mean_key_similarity": 0.6825688481330872,
+                  "coarse_entropy": 3.3438639640808105,
+                  "retained_mass": 0.8322794437408447,
+                  "relative_output_error": 0.2243610918521881,
+                  "realized_sparsity": 0.502260684967041
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6894505620002747,
+                  "mean_key_similarity": 0.6936853528022766,
+                  "coarse_entropy": 3.174443006515503,
+                  "retained_mass": 0.828833818435669,
+                  "relative_output_error": 0.23365963995456696,
+                  "realized_sparsity": 0.5807141661643982
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7628198862075806,
+                  "mean_key_similarity": 0.7017302513122559,
+                  "coarse_entropy": 3.0942366123199463,
+                  "retained_mass": 0.8383347392082214,
+                  "relative_output_error": 0.2198990136384964,
+                  "realized_sparsity": 0.5842490196228027
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.8463646769523621,
+                  "mean_key_similarity": 0.7188754677772522,
+                  "coarse_entropy": 2.997969150543213,
+                  "retained_mass": 0.8517376780509949,
+                  "relative_output_error": 0.19936984777450562,
+                  "realized_sparsity": 0.5976641178131104
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              2.760464906692505,
+              3.324960470199585,
+              3.6703946590423584
+            ],
+            "spearman_rho_error": 0.8008023513805649,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7600616812705994,
+                  "mean_key_similarity": 0.7691144347190857,
+                  "coarse_entropy": 2.2770915031433105,
+                  "retained_mass": 0.958983302116394,
+                  "relative_output_error": 0.047628242522478104,
+                  "realized_sparsity": 0.659247636795044
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7124623656272888,
+                  "mean_key_similarity": 0.7274022102355957,
+                  "coarse_entropy": 3.062243700027466,
+                  "retained_mass": 0.8625051975250244,
+                  "relative_output_error": 0.1531003713607788,
+                  "realized_sparsity": 0.6177690029144287
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.6859711408615112,
+                  "mean_key_similarity": 0.6734806299209595,
+                  "coarse_entropy": 3.5224719047546387,
+                  "retained_mass": 0.7748000025749207,
+                  "relative_output_error": 0.3055266737937927,
+                  "realized_sparsity": 0.5394397377967834
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7128534913063049,
+                  "mean_key_similarity": 0.6268861889839172,
+                  "coarse_entropy": 3.7485222816467285,
+                  "retained_mass": 0.7549200654029846,
+                  "relative_output_error": 0.37099286913871765,
+                  "realized_sparsity": 0.4484790861606598
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "9": {
+      "A_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7538474798202515,
+          "mean_key_similarity": 0.7046477198600769,
+          "coarse_entropy": 3.50077748298645,
+          "retained_mass": 0.9856218099594116,
+          "relative_output_error": 0.024542270228266716,
+          "realized_sparsity": 0.10328581184148788
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6611203551292419,
+              0.7725685238838196,
+              0.8586881160736084
+            ],
+            "spearman_rho_error": -0.10604769038801994,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5757777094841003,
+                  "mean_key_similarity": 0.6912316083908081,
+                  "coarse_entropy": 3.572514057159424,
+                  "retained_mass": 0.9851624369621277,
+                  "relative_output_error": 0.026105079799890518,
+                  "realized_sparsity": 0.0798189640045166
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7196489572525024,
+                  "mean_key_similarity": 0.7005574703216553,
+                  "coarse_entropy": 3.494842052459717,
+                  "retained_mass": 0.9859076142311096,
+                  "relative_output_error": 0.024751625955104828,
+                  "realized_sparsity": 0.102707140147686
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.8170067071914673,
+                  "mean_key_similarity": 0.7088669538497925,
+                  "coarse_entropy": 3.44680118560791,
+                  "retained_mass": 0.985822856426239,
+                  "relative_output_error": 0.023688020184636116,
+                  "realized_sparsity": 0.11890997737646103
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.9029325246810913,
+                  "mean_key_similarity": 0.7179627418518066,
+                  "coarse_entropy": 3.488929271697998,
+                  "retained_mass": 0.9855980277061462,
+                  "relative_output_error": 0.023624613881111145,
+                  "realized_sparsity": 0.1117042675614357
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              3.3772644996643066,
+              3.5556068420410156,
+              3.691908359527588
+            ],
+            "spearman_rho_error": -0.038870340080357314,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7826616168022156,
+                  "mean_key_similarity": 0.715001106262207,
+                  "coarse_entropy": 3.1453680992126465,
+                  "retained_mass": 0.9844370484352112,
+                  "relative_output_error": 0.024173825979232788,
+                  "realized_sparsity": 0.17840933799743652
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7500866651535034,
+                  "mean_key_similarity": 0.7049701809883118,
+                  "coarse_entropy": 3.474489450454712,
+                  "retained_mass": 0.9850772023200989,
+                  "relative_output_error": 0.025353388860821724,
+                  "realized_sparsity": 0.10897364467382431
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7459302544593811,
+                  "mean_key_similarity": 0.6990763545036316,
+                  "coarse_entropy": 3.6267104148864746,
+                  "retained_mass": 0.9857161641120911,
+                  "relative_output_error": 0.02538507618010044,
+                  "realized_sparsity": 0.07566726207733154
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7367278337478638,
+                  "mean_key_similarity": 0.6995738744735718,
+                  "coarse_entropy": 3.7564539909362793,
+                  "retained_mass": 0.9872597455978394,
+                  "relative_output_error": 0.023257168009877205,
+                  "realized_sparsity": 0.05010352283716202
+                }
+              }
+            ]
+          }
+        }
+      },
+      "B_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7538474798202515,
+          "mean_key_similarity": 0.7046477198600769,
+          "coarse_entropy": 3.50077748298645,
+          "retained_mass": 0.97971510887146,
+          "relative_output_error": 0.033238645642995834,
+          "realized_sparsity": 0.13202810287475586
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6611203551292419,
+              0.7725685238838196,
+              0.8586881160736084
+            ],
+            "spearman_rho_error": -0.01736337895460272,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5757777094841003,
+                  "mean_key_similarity": 0.6912316083908081,
+                  "coarse_entropy": 3.572514057159424,
+                  "retained_mass": 0.9811997413635254,
+                  "relative_output_error": 0.03183623030781746,
+                  "realized_sparsity": 0.0949711874127388
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7196489572525024,
+                  "mean_key_similarity": 0.7005574703216553,
+                  "coarse_entropy": 3.494842052459717,
+                  "retained_mass": 0.9792066812515259,
+                  "relative_output_error": 0.03503972664475441,
+                  "realized_sparsity": 0.13624200224876404
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.8170067071914673,
+                  "mean_key_similarity": 0.7088669538497925,
+                  "coarse_entropy": 3.44680118560791,
+                  "retained_mass": 0.979372501373291,
+                  "relative_output_error": 0.03308263048529625,
+                  "realized_sparsity": 0.15318669378757477
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.9029325246810913,
+                  "mean_key_similarity": 0.7179627418518066,
+                  "coarse_entropy": 3.488929271697998,
+                  "retained_mass": 0.979072093963623,
+                  "relative_output_error": 0.03299618512392044,
+                  "realized_sparsity": 0.143708273768425
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              3.3772644996643066,
+              3.5556068420410156,
+              3.691908359527588
+            ],
+            "spearman_rho_error": -0.06962970493022569,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7826616168022156,
+                  "mean_key_similarity": 0.715001106262207,
+                  "coarse_entropy": 3.1453680992126465,
+                  "retained_mass": 0.9774842262268066,
+                  "relative_output_error": 0.03373080864548683,
+                  "realized_sparsity": 0.22521571815013885
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7500866651535034,
+                  "mean_key_similarity": 0.7049701809883118,
+                  "coarse_entropy": 3.474489450454712,
+                  "retained_mass": 0.9791576862335205,
+                  "relative_output_error": 0.03417735919356346,
+                  "realized_sparsity": 0.13836246728897095
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7459302544593811,
+                  "mean_key_similarity": 0.6990763545036316,
+                  "coarse_entropy": 3.6267104148864746,
+                  "retained_mass": 0.9800522327423096,
+                  "relative_output_error": 0.034126512706279755,
+                  "realized_sparsity": 0.09831628203392029
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7367278337478638,
+                  "mean_key_similarity": 0.6995738744735718,
+                  "coarse_entropy": 3.7564539909362793,
+                  "retained_mass": 0.9821563363075256,
+                  "relative_output_error": 0.030920561403036118,
+                  "realized_sparsity": 0.06623329967260361
+                }
+              }
+            ]
+          }
+        }
+      },
+      "C_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7538474798202515,
+          "mean_key_similarity": 0.7046477198600769,
+          "coarse_entropy": 3.50077748298645,
+          "retained_mass": 0.9622892737388611,
+          "relative_output_error": 0.05735315382480621,
+          "realized_sparsity": 0.1973653882741928
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6611203551292419,
+              0.7725685238838196,
+              0.8586881160736084
+            ],
+            "spearman_rho_error": -0.17529132475414141,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5757777094841003,
+                  "mean_key_similarity": 0.6912316083908081,
+                  "coarse_entropy": 3.572514057159424,
+                  "retained_mass": 0.9594430327415466,
+                  "relative_output_error": 0.06385023891925812,
+                  "realized_sparsity": 0.1716194897890091
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7196489572525024,
+                  "mean_key_similarity": 0.7005574703216553,
+                  "coarse_entropy": 3.494842052459717,
+                  "retained_mass": 0.9629690051078796,
+                  "relative_output_error": 0.0575585812330246,
+                  "realized_sparsity": 0.19936524331569672
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.8170067071914673,
+                  "mean_key_similarity": 0.7088669538497925,
+                  "coarse_entropy": 3.44680118560791,
+                  "retained_mass": 0.9638980627059937,
+                  "relative_output_error": 0.0537731871008873,
+                  "realized_sparsity": 0.21371608972549438
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.9029325246810913,
+                  "mean_key_similarity": 0.7179627418518066,
+                  "coarse_entropy": 3.488929271697998,
+                  "retained_mass": 0.9628493189811707,
+                  "relative_output_error": 0.054231297224760056,
+                  "realized_sparsity": 0.2047259360551834
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              3.3772644996643066,
+              3.5556068420410156,
+              3.691908359527588
+            ],
+            "spearman_rho_error": 0.043528642320138596,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7826616168022156,
+                  "mean_key_similarity": 0.715001106262207,
+                  "coarse_entropy": 3.1453680992126465,
+                  "retained_mass": 0.9647048115730286,
+                  "relative_output_error": 0.05173739790916443,
+                  "realized_sparsity": 0.28898048400878906
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7500866651535034,
+                  "mean_key_similarity": 0.7049701809883118,
+                  "coarse_entropy": 3.474489450454712,
+                  "retained_mass": 0.9594854116439819,
+                  "relative_output_error": 0.06174534186720848,
+                  "realized_sparsity": 0.2179974764585495
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7459302544593811,
+                  "mean_key_similarity": 0.6990763545036316,
+                  "coarse_entropy": 3.6267104148864746,
+                  "retained_mass": 0.9609076976776123,
+                  "relative_output_error": 0.06128830835223198,
+                  "realized_sparsity": 0.16432218253612518
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7367278337478638,
+                  "mean_key_similarity": 0.6995738744735718,
+                  "coarse_entropy": 3.7564539909362793,
+                  "retained_mass": 0.9640612006187439,
+                  "relative_output_error": 0.054642122238874435,
+                  "realized_sparsity": 0.11814917623996735
+                }
+              }
+            ]
+          }
+        }
+      },
+      "D_25": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7538474798202515,
+          "mean_key_similarity": 0.7046477198600769,
+          "coarse_entropy": 3.50077748298645,
+          "retained_mass": 0.9266133308410645,
+          "relative_output_error": 0.10296794027090073,
+          "realized_sparsity": 0.27993786334991455
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6611203551292419,
+              0.7725685238838196,
+              0.8586881160736084
+            ],
+            "spearman_rho_error": 0.058301255710013544,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5757777094841003,
+                  "mean_key_similarity": 0.6912316083908081,
+                  "coarse_entropy": 3.572514057159424,
+                  "retained_mass": 0.934853732585907,
+                  "relative_output_error": 0.09267720580101013,
+                  "realized_sparsity": 0.2118498533964157
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7196489572525024,
+                  "mean_key_similarity": 0.7005574703216553,
+                  "coarse_entropy": 3.494842052459717,
+                  "retained_mass": 0.9210399389266968,
+                  "relative_output_error": 0.11322595179080963,
+                  "realized_sparsity": 0.3047204613685608
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.8170067071914673,
+                  "mean_key_similarity": 0.7088669538497925,
+                  "coarse_entropy": 3.44680118560791,
+                  "retained_mass": 0.9284583330154419,
+                  "relative_output_error": 0.1009199395775795,
+                  "realized_sparsity": 0.30258098244667053
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.9029325246810913,
+                  "mean_key_similarity": 0.7179627418518066,
+                  "coarse_entropy": 3.488929271697998,
+                  "retained_mass": 0.9221015572547913,
+                  "relative_output_error": 0.10504818707704544,
+                  "realized_sparsity": 0.3005354702472687
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              3.3772644996643066,
+              3.5556068420410156,
+              3.691908359527588
+            ],
+            "spearman_rho_error": 0.5187281636269645,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7826616168022156,
+                  "mean_key_similarity": 0.715001106262207,
+                  "coarse_entropy": 3.1453680992126465,
+                  "retained_mass": 0.958327054977417,
+                  "relative_output_error": 0.062058281153440475,
+                  "realized_sparsity": 0.3069821000099182
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7500866651535034,
+                  "mean_key_similarity": 0.7049701809883118,
+                  "coarse_entropy": 3.474489450454712,
+                  "retained_mass": 0.9371389746665955,
+                  "relative_output_error": 0.09353187680244446,
+                  "realized_sparsity": 0.28060755133628845
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7459302544593811,
+                  "mean_key_similarity": 0.6990763545036316,
+                  "coarse_entropy": 3.6267104148864746,
+                  "retained_mass": 0.9170335531234741,
+                  "relative_output_error": 0.11989796161651611,
+                  "realized_sparsity": 0.2699905037879944
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7367278337478638,
+                  "mean_key_similarity": 0.6995738744735718,
+                  "coarse_entropy": 3.7564539909362793,
+                  "retained_mass": 0.8939613103866577,
+                  "relative_output_error": 0.1363755464553833,
+                  "realized_sparsity": 0.2621155381202698
+                }
+              }
+            ]
+          }
+        }
+      },
+      "A_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7538474798202515,
+          "mean_key_similarity": 0.7046477198600769,
+          "coarse_entropy": 3.50077748298645,
+          "retained_mass": 0.891572117805481,
+          "relative_output_error": 0.14077602326869965,
+          "realized_sparsity": 0.3850257396697998
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6611203551292419,
+              0.7725685238838196,
+              0.8586881160736084
+            ],
+            "spearman_rho_error": -0.17368619548568942,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5757777094841003,
+                  "mean_key_similarity": 0.6912316083908081,
+                  "coarse_entropy": 3.572514057159424,
+                  "retained_mass": 0.8882756233215332,
+                  "relative_output_error": 0.15575651824474335,
+                  "realized_sparsity": 0.3487991690635681
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7196489572525024,
+                  "mean_key_similarity": 0.7005574703216553,
+                  "coarse_entropy": 3.494842052459717,
+                  "retained_mass": 0.8938313722610474,
+                  "relative_output_error": 0.13990351557731628,
+                  "realized_sparsity": 0.38762006163597107
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.8170067071914673,
+                  "mean_key_similarity": 0.7088669538497925,
+                  "coarse_entropy": 3.44680118560791,
+                  "retained_mass": 0.892708420753479,
+                  "relative_output_error": 0.13435132801532745,
+                  "realized_sparsity": 0.4100401699542999
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.9029325246810913,
+                  "mean_key_similarity": 0.7179627418518066,
+                  "coarse_entropy": 3.488929271697998,
+                  "retained_mass": 0.8914661407470703,
+                  "relative_output_error": 0.1330927610397339,
+                  "realized_sparsity": 0.39358699321746826
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              3.3772644996643066,
+              3.5556068420410156,
+              3.691908359527588
+            ],
+            "spearman_rho_error": -0.156800988690609,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7826616168022156,
+                  "mean_key_similarity": 0.715001106262207,
+                  "coarse_entropy": 3.1453680992126465,
+                  "retained_mass": 0.8825263381004333,
+                  "relative_output_error": 0.1417301744222641,
+                  "realized_sparsity": 0.5378466844558716
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7500866651535034,
+                  "mean_key_similarity": 0.7049701809883118,
+                  "coarse_entropy": 3.474489450454712,
+                  "retained_mass": 0.8890202045440674,
+                  "relative_output_error": 0.14851072430610657,
+                  "realized_sparsity": 0.40915459394454956
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7459302544593811,
+                  "mean_key_similarity": 0.6990763545036316,
+                  "coarse_entropy": 3.6267104148864746,
+                  "retained_mass": 0.893429696559906,
+                  "relative_output_error": 0.14643806219100952,
+                  "realized_sparsity": 0.3330688774585724
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7367278337478638,
+                  "mean_key_similarity": 0.6995738744735718,
+                  "coarse_entropy": 3.7564539909362793,
+                  "retained_mass": 0.9013025760650635,
+                  "relative_output_error": 0.1264268159866333,
+                  "realized_sparsity": 0.2600107789039612
+                }
+              }
+            ]
+          }
+        }
+      },
+      "B_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7538474798202515,
+          "mean_key_similarity": 0.7046477198600769,
+          "coarse_entropy": 3.50077748298645,
+          "retained_mass": 0.7978719472885132,
+          "relative_output_error": 0.24646316468715668,
+          "realized_sparsity": 0.5055601596832275
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6611203551292419,
+              0.7725685238838196,
+              0.8586881160736084
+            ],
+            "spearman_rho_error": 0.14788402707179232,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5757777094841003,
+                  "mean_key_similarity": 0.6912316083908081,
+                  "coarse_entropy": 3.572514057159424,
+                  "retained_mass": 0.847350537776947,
+                  "relative_output_error": 0.19507242739200592,
+                  "realized_sparsity": 0.36306068301200867
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7196489572525024,
+                  "mean_key_similarity": 0.7005574703216553,
+                  "coarse_entropy": 3.494842052459717,
+                  "retained_mass": 0.7858630418777466,
+                  "relative_output_error": 0.26615071296691895,
+                  "realized_sparsity": 0.5448604822158813
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.8170067071914673,
+                  "mean_key_similarity": 0.7088669538497925,
+                  "coarse_entropy": 3.44680118560791,
+                  "retained_mass": 0.7835962176322937,
+                  "relative_output_error": 0.2619706988334656,
+                  "realized_sparsity": 0.561532199382782
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.9029325246810913,
+                  "mean_key_similarity": 0.7179627418518066,
+                  "coarse_entropy": 3.488929271697998,
+                  "retained_mass": 0.7746885418891907,
+                  "relative_output_error": 0.2626533806324005,
+                  "realized_sparsity": 0.552740752696991
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              3.3772644996643066,
+              3.5556068420410156,
+              3.691908359527588
+            ],
+            "spearman_rho_error": -0.03637553188638391,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7826616168022156,
+                  "mean_key_similarity": 0.715001106262207,
+                  "coarse_entropy": 3.1453680992126465,
+                  "retained_mass": 0.7883750200271606,
+                  "relative_output_error": 0.24809838831424713,
+                  "realized_sparsity": 0.6344186067581177
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7500866651535034,
+                  "mean_key_similarity": 0.7049701809883118,
+                  "coarse_entropy": 3.474489450454712,
+                  "retained_mass": 0.7958248853683472,
+                  "relative_output_error": 0.2546916604042053,
+                  "realized_sparsity": 0.526686429977417
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7459302544593811,
+                  "mean_key_similarity": 0.6990763545036316,
+                  "coarse_entropy": 3.6267104148864746,
+                  "retained_mass": 0.7993794679641724,
+                  "relative_output_error": 0.2523162066936493,
+                  "realized_sparsity": 0.46240270137786865
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7367278337478638,
+                  "mean_key_similarity": 0.6995738744735718,
+                  "coarse_entropy": 3.7564539909362793,
+                  "retained_mass": 0.807910680770874,
+                  "relative_output_error": 0.2307489961385727,
+                  "realized_sparsity": 0.3987234830856323
+                }
+              }
+            ]
+          }
+        }
+      },
+      "C_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7538474798202515,
+          "mean_key_similarity": 0.7046477198600769,
+          "coarse_entropy": 3.50077748298645,
+          "retained_mass": 0.8749102354049683,
+          "relative_output_error": 0.15952754020690918,
+          "realized_sparsity": 0.4187268614768982
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6611203551292419,
+              0.7725685238838196,
+              0.8586881160736084
+            ],
+            "spearman_rho_error": -0.1860912364026203,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5757777094841003,
+                  "mean_key_similarity": 0.6912316083908081,
+                  "coarse_entropy": 3.572514057159424,
+                  "retained_mass": 0.8706512451171875,
+                  "relative_output_error": 0.17726533114910126,
+                  "realized_sparsity": 0.38363343477249146
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7196489572525024,
+                  "mean_key_similarity": 0.7005574703216553,
+                  "coarse_entropy": 3.494842052459717,
+                  "retained_mass": 0.8773376941680908,
+                  "relative_output_error": 0.15857042372226715,
+                  "realized_sparsity": 0.4216289222240448
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.8170067071914673,
+                  "mean_key_similarity": 0.7088669538497925,
+                  "coarse_entropy": 3.44680118560791,
+                  "retained_mass": 0.876636803150177,
+                  "relative_output_error": 0.15193387866020203,
+                  "realized_sparsity": 0.44313302636146545
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.9029325246810913,
+                  "mean_key_similarity": 0.7179627418518066,
+                  "coarse_entropy": 3.488929271697998,
+                  "retained_mass": 0.8750208616256714,
+                  "relative_output_error": 0.1503441482782364,
+                  "realized_sparsity": 0.42645263671875
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              3.3772644996643066,
+              3.5556068420410156,
+              3.691908359527588
+            ],
+            "spearman_rho_error": -0.1452095770497823,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7826616168022156,
+                  "mean_key_similarity": 0.715001106262207,
+                  "coarse_entropy": 3.1453680992126465,
+                  "retained_mass": 0.8660090565681458,
+                  "relative_output_error": 0.15982234477996826,
+                  "realized_sparsity": 0.5721899271011353
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7500866651535034,
+                  "mean_key_similarity": 0.7049701809883118,
+                  "coarse_entropy": 3.474489450454712,
+                  "retained_mass": 0.871563196182251,
+                  "relative_output_error": 0.1686290055513382,
+                  "realized_sparsity": 0.44509926438331604
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7459302544593811,
+                  "mean_key_similarity": 0.6990763545036316,
+                  "coarse_entropy": 3.6267104148864746,
+                  "retained_mass": 0.8765736818313599,
+                  "relative_output_error": 0.16615621745586395,
+                  "realized_sparsity": 0.36702269315719604
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7367278337478638,
+                  "mean_key_similarity": 0.6995738744735718,
+                  "coarse_entropy": 3.7564539909362793,
+                  "retained_mass": 0.8854979872703552,
+                  "relative_output_error": 0.14350809156894684,
+                  "realized_sparsity": 0.29057198762893677
+                }
+              }
+            ]
+          }
+        }
+      },
+      "D_50": {
+        "n_query_blocks": 16317,
+        "means": {
+          "q_similarity": 0.7538474798202515,
+          "mean_key_similarity": 0.7046477198600769,
+          "coarse_entropy": 3.50077748298645,
+          "retained_mass": 0.7917320132255554,
+          "relative_output_error": 0.25569042563438416,
+          "realized_sparsity": 0.5395936965942383
+        },
+        "strata": {
+          "q_similarity": {
+            "cutpoints": [
+              0.6611203551292419,
+              0.7725685238838196,
+              0.8586881160736084
+            ],
+            "spearman_rho_error": -0.05373762969708507,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.5757777094841003,
+                  "mean_key_similarity": 0.6912316083908081,
+                  "coarse_entropy": 3.572514057159424,
+                  "retained_mass": 0.8006276488304138,
+                  "relative_output_error": 0.2540019452571869,
+                  "realized_sparsity": 0.4712930917739868
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7196489572525024,
+                  "mean_key_similarity": 0.7005574703216553,
+                  "coarse_entropy": 3.494842052459717,
+                  "retained_mass": 0.7873486876487732,
+                  "relative_output_error": 0.26565536856651306,
+                  "realized_sparsity": 0.560585081577301
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.8170067071914673,
+                  "mean_key_similarity": 0.7088669538497925,
+                  "coarse_entropy": 3.44680118560791,
+                  "retained_mass": 0.7959175109863281,
+                  "relative_output_error": 0.24933643639087677,
+                  "realized_sparsity": 0.5652848482131958
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.9029325246810913,
+                  "mean_key_similarity": 0.7179627418518066,
+                  "coarse_entropy": 3.488929271697998,
+                  "retained_mass": 0.7830403447151184,
+                  "relative_output_error": 0.25376901030540466,
+                  "realized_sparsity": 0.5611453652381897
+                }
+              }
+            ]
+          },
+          "coarse_entropy": {
+            "cutpoints": [
+              3.3772644996643066,
+              3.5556068420410156,
+              3.691908359527588
+            ],
+            "spearman_rho_error": 0.29230607574943646,
+            "bins": [
+              {
+                "quartile": 1,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7826616168022156,
+                  "mean_key_similarity": 0.715001106262207,
+                  "coarse_entropy": 3.1453680992126465,
+                  "retained_mass": 0.8457698225975037,
+                  "relative_output_error": 0.19228672981262207,
+                  "realized_sparsity": 0.5975729823112488
+                }
+              },
+              {
+                "quartile": 2,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7500866651535034,
+                  "mean_key_similarity": 0.7049701809883118,
+                  "coarse_entropy": 3.474489450454712,
+                  "retained_mass": 0.7807091474533081,
+                  "relative_output_error": 0.2746303975582123,
+                  "realized_sparsity": 0.5728060007095337
+                }
+              },
+              {
+                "quartile": 3,
+                "n": 4079,
+                "means": {
+                  "q_similarity": 0.7459302544593811,
+                  "mean_key_similarity": 0.6990763545036316,
+                  "coarse_entropy": 3.6267104148864746,
+                  "retained_mass": 0.7639999389648438,
+                  "relative_output_error": 0.2927466928958893,
+                  "realized_sparsity": 0.5304755568504333
+                }
+              },
+              {
+                "quartile": 4,
+                "n": 4080,
+                "means": {
+                  "q_similarity": 0.7367278337478638,
+                  "mean_key_similarity": 0.6995738744735718,
+                  "coarse_entropy": 3.7564539909362793,
+                  "retained_mass": 0.7764575481414795,
+                  "relative_output_error": 0.2630961239337921,
+                  "realized_sparsity": 0.4574771225452423
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
