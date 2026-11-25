@@ -39,7 +39,7 @@ The following are SHA-256 hashes of parsed JSON serialized using `json.dumps(obj
 ## Proposed final evaluation protocol (team confirmation required)
 
 - Evaluate all ten configurations on the same full official test split, without shuffling, training or test-based parameter selection. Use FP32 and inference mode, proposed batch size 16. Record hardware and exact torch, torchvision, timm, numpy and scikit-learn versions.
-- Save aggregate accuracy, macro-F1 over 37 classes, cross-entropy, sample count and attention diagnostics. Save aligned per-image sample indices, labels and predictions for paired accuracy comparisons; this export is not yet implemented in V4.
+- Save aggregate accuracy, macro-F1 over 37 classes, cross-entropy, sample count and attention diagnostics. Save aligned per-image sample indices, labels and predictions for paired accuracy comparisons; the optional prediction-export follow-up is documented in [PREDICTION_EXPORT.md](PREDICTION_EXPORT.md) and must pass integration verification before the official run.
 - Report actual test sparsity even if outside ±3 percentage points of target. Do not recalibrate on test. Compare budget-matched variants, not isolated causal effects with all other parameters fixed.
 - Existing GPU timing: synthetic GPU-resident FP32 inputs, batch 1, 10 warmups and 30 measured repetitions, synchronized CUDA, median, diagnostics off. This prototype computes dense scores and value products; no sparse kernel or measured speedup. Attention-edge sparsity is not total model FLOP reduction.
 - Remaining diagnostics: evaluate relationships between similarity, entropy and attention error using validation data. Define analysis before viewing test outcomes. Existing aggregate diagnostics are not per-image distributions.

@@ -43,7 +43,13 @@ def build_datasets_for_model(model, data_root, manifest, batch_size=32,
 
 
 @torch.inference_mode()
-def evaluate_model(model, loader, device, max_images=None):
+def evaluate_model(model, loader, device, max_images=None, prediction_rows=None):
+    # Optional sink; all existing callers retain the original metric-only API.
+    if prediction_rows is not None:
+        from .predictions import evaluation_indices
+        indices = evaluation_indices(loader)
+        if prediction_rows:
+            raise ValueError("Prediction sink must be empty")
     model.eval()
     preds, labels = [], []
     total_loss, count, correct = 0., 0, 0
@@ -64,6 +70,11 @@ def evaluate_model(model, loader, device, max_images=None):
         labels.extend(ys.cpu().tolist())
     if count == 0:
         raise RuntimeError("No images were evaluated")
+    if prediction_rows is not None:
+        expected = len(indices) if max_images is None else min(len(indices), max_images)
+        if count != expected:
+            raise RuntimeError("Prediction count differs from expected dataset indices")
+        prediction_rows.extend(zip(indices[:count], labels, preds))
     return {"n": count, "loss": total_loss / count, "accuracy": correct / count,
             "macro_f1": float(f1_score(labels, preds, labels=list(range(37)),
                                        average="macro", zero_division=0))}

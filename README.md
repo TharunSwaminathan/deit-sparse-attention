@@ -19,13 +19,16 @@ The dataset and trained checkpoint are intentionally not tracked. Obtain `Sparge
 
 ## Repository contents
 
-- `sparse_pet/`: V4 source code (unchanged from validated archive).
-- `tests/`: V4 tests.
+- `sparse_pet/`: V4 attention implementation with optional per-image prediction export.
+- `tests/`: V4 tests and prediction-export regression tests.
 - `outputs/`: small calibration, mask overlap, validation, split manifest, layer probe and GPU timing JSON files.
 - [Final validation and GPU handoff](docs/Tharun_Final_GPU_Benchmark_and_Validation_Handoff.md): latest experimental results and limitations.
 - [Combined result table](docs/Tharun_Final_Validation_and_T4_GPU_Results.csv).
 - [Original V4 handoff](THARUN_HANDOFF.md).
 - [Historical starter instructions](docs/STARTER_README.md), [historical Colab instructions](RUN_NEXT_COLAB.md), and [team kickoff](TEAM_KICKOFF.md). These retain earlier version labels and pilot commands for reference; use the current calibrated settings and latest results instead of repeating old experiments.
+
+- [Prediction export and aligned evaluation](docs/PREDICTION_EXPORT.md).
+- [Proposed experimental freeze](docs/EXPERIMENT_FREEZE.md).
 
 ## Team next steps
 

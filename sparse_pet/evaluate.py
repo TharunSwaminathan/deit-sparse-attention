@@ -17,6 +17,7 @@ import torch
 from .attention import patch_attention_layers, parse_layer_indices
 from .common import build_datasets_for_model, evaluate_model, load_dense_checkpoint, save_json, sha256_file
 from .masking import MaskConfig
+from .predictions import write_predictions
 
 VARIANTS = {"A": ("top_p", False), "B": ("top_p", True),
             "C": ("hybrid", False), "D": ("hybrid", True)}
@@ -78,11 +79,14 @@ def parse_args():
     ap.add_argument("--max-images", type=int, default=None, help="validation pilot only")
     ap.add_argument("--benchmark", action="store_true")
     ap.add_argument("--output", default="outputs/evaluation.json")
+    ap.add_argument("--predictions-output", help="optional aligned per-image CSV; requires ordered evaluation")
     return ap.parse_args()
 
 
 def main():
     args = parse_args()
+    if args.predictions_output and Path(args.predictions_output).resolve() == Path(args.output).resolve():
+        raise ValueError("Prediction CSV and aggregate JSON must use different paths")
     if args.split == "test":
         if not args.frozen_config:
             raise ValueError("Test is locked: first calibrate on validation and provide --frozen-config")
@@ -124,7 +128,9 @@ def main():
                          else parse_layer_indices(",".join(map(str, frozen_layers)), len(model.blocks)))
         wrappers = patch_attention_layers(model, mask_config, layer_indices=layer_indices, diagnostics=True)
     loader = val_loader if args.split == "val" else test_loader
-    scores = evaluate_model(model, loader, device, max_images=args.max_images)
+    prediction_rows = [] if args.predictions_output else None
+    scores = evaluate_model(model, loader, device, max_images=args.max_images,
+                            prediction_rows=prediction_rows)
     diagnostics = average_wrapper_stats(wrappers)
     for w in wrappers:
         w.collect_diagnostics = False
@@ -135,6 +141,13 @@ def main():
               "checkpoint": args.checkpoint, "device": str(device)}
     if args.benchmark:
         result["latency"] = benchmark(model, device, repetitions=20, warmup=5)
+    if prediction_rows is not None:
+        configuration = args.label or args.variant
+        write_predictions(args.predictions_output, prediction_rows, args.split, configuration)
+        result["prediction_export"] = {"path": args.predictions_output,
+                                       "configuration": configuration,
+                                       "n": len(prediction_rows),
+                                       "id_scheme": "official_split:zero_based_index"}
     save_json(args.output, result)
     print(json.dumps(result, indent=2))
 
