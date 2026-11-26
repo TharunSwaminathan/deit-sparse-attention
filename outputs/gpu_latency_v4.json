@@ -1,0 +1,83 @@
+{
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "torch_version": "2.14.1+cu130",
+  "checkpoint_sha256": "ca12f33e158e30c08279ff8be5bd5b2a69be75e688a01eee59195fc3f198cb06",
+  "layers": [
+    3,
+    6,
+    9
+  ],
+  "results": [
+    {
+      "label": "dense",
+      "median_ms": 4.738701999968953,
+      "repetitions": 30,
+      "timing_batch_size": 1,
+      "precision": "fp32"
+    },
+    {
+      "label": "unmasked",
+      "median_ms": 5.2351020000003246,
+      "repetitions": 30,
+      "timing_batch_size": 1,
+      "precision": "fp32"
+    },
+    {
+      "label": "A_25",
+      "median_ms": 7.327436500020212,
+      "repetitions": 30,
+      "timing_batch_size": 1,
+      "precision": "fp32"
+    },
+    {
+      "label": "B_25",
+      "median_ms": 8.700637999993432,
+      "repetitions": 30,
+      "timing_batch_size": 1,
+      "precision": "fp32"
+    },
+    {
+      "label": "C_25",
+      "median_ms": 7.570351500021388,
+      "repetitions": 30,
+      "timing_batch_size": 1,
+      "precision": "fp32"
+    },
+    {
+      "label": "D_25",
+      "median_ms": 9.171376500006545,
+      "repetitions": 30,
+      "timing_batch_size": 1,
+      "precision": "fp32"
+    },
+    {
+      "label": "A_50",
+      "median_ms": 7.8335265000077925,
+      "repetitions": 30,
+      "timing_batch_size": 1,
+      "precision": "fp32"
+    },
+    {
+      "label": "B_50",
+      "median_ms": 11.244304499967939,
+      "repetitions": 30,
+      "timing_batch_size": 1,
+      "precision": "fp32"
+    },
+    {
+      "label": "C_50",
+      "median_ms": 10.761032499999601,
+      "repetitions": 30,
+      "timing_batch_size": 1,
+      "precision": "fp32"
+    },
+    {
+      "label": "D_50",
+      "median_ms": 9.275217000009661,
+      "repetitions": 30,
+      "timing_batch_size": 1,
+      "precision": "fp32"
+    }
+  ]
+}

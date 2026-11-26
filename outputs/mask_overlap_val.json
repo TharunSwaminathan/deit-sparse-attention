@@ -1,0 +1,237 @@
+{
+  "split": "validation_only",
+  "checkpoint_sha256": "ca12f33e158e30c08279ff8be5bd5b2a69be75e688a01eee59195fc3f198cb06",
+  "layers": [
+    3,
+    6,
+    9
+  ],
+  "images": 64,
+  "note": "All A/B/C/D masks were constructed from identical DENSE attention inputs. Actual multi-layer masked-model sparsity must be evaluated separately.",
+  "targets": {
+    "25": {
+      "methods": {
+        "A": {
+          "total_edges": 22353984,
+          "masked_edges": 5455520,
+          "coarse_topk_added_sum": 0.0,
+          "coarse_protection_added_sum": 0.0,
+          "n_samples": 1382976,
+          "measured_sparsity_on_dense_inputs": 0.2440513512043312,
+          "coarse_topk_added_fraction": 0.0,
+          "coarse_protection_added_fraction": 0.0
+        },
+        "B": {
+          "total_edges": 22353984,
+          "masked_edges": 5802128,
+          "coarse_topk_added_sum": 0.0,
+          "coarse_protection_added_sum": 39379.0,
+          "n_samples": 1382976,
+          "measured_sparsity_on_dense_inputs": 0.2595567752039189,
+          "coarse_topk_added_fraction": 0.0,
+          "coarse_protection_added_fraction": 0.028474102225924385
+        },
+        "C": {
+          "total_edges": 22353984,
+          "masked_edges": 5449200,
+          "coarse_topk_added_sum": 151949.0,
+          "coarse_protection_added_sum": 0.0,
+          "n_samples": 1382976,
+          "measured_sparsity_on_dense_inputs": 0.2437686275520283,
+          "coarse_topk_added_fraction": 0.10987103174603174,
+          "coarse_protection_added_fraction": 0.0
+        },
+        "D": {
+          "total_edges": 22353984,
+          "masked_edges": 5557632,
+          "coarse_topk_added_sum": 534815.0,
+          "coarse_protection_added_sum": 132456.0,
+          "n_samples": 1382976,
+          "measured_sparsity_on_dense_inputs": 0.24861930651824748,
+          "coarse_topk_added_fraction": 0.3867131461428109,
+          "coarse_protection_added_fraction": 0.09577606552825212
+        }
+      },
+      "pairs": {
+        "A-B": {
+          "changed_edges": 1287440,
+          "total_edges": 22353984,
+          "changed_patch_edges": 1287440,
+          "total_patch_edges": 22127616,
+          "intersection": 16081440,
+          "union": 17368880,
+          "changed_edge_fraction": 0.05759331312038159,
+          "changed_patch_edge_fraction": 0.058182499190152254,
+          "jaccard_kept_edges": 0.9258766253206885
+        },
+        "A-C": {
+          "changed_edges": 3026960,
+          "total_edges": 22353984,
+          "changed_patch_edges": 3026960,
+          "total_patch_edges": 22127616,
+          "intersection": 15388144,
+          "union": 18415104,
+          "changed_edge_fraction": 0.13541031433144088,
+          "changed_patch_edge_fraction": 0.13679557707436715,
+          "jaccard_kept_edges": 0.8356262337698446
+        },
+        "A-D": {
+          "changed_edges": 4696480,
+          "total_edges": 22353984,
+          "changed_patch_edges": 4696480,
+          "total_patch_edges": 22127616,
+          "intersection": 14499168,
+          "union": 19195648,
+          "changed_edge_fraction": 0.21009588268471519,
+          "changed_patch_edge_fraction": 0.21224518719052246,
+          "jaccard_kept_edges": 0.7553362095408293
+        },
+        "B-C": {
+          "changed_edges": 3224000,
+          "total_edges": 22353984,
+          "changed_patch_edges": 3224000,
+          "total_patch_edges": 22127616,
+          "intersection": 15116320,
+          "union": 18340320,
+          "changed_edge_fraction": 0.14422485047855452,
+          "changed_patch_edge_fraction": 0.14570028691748807,
+          "jaccard_kept_edges": 0.8242124455843737
+        },
+        "B-D": {
+          "changed_edges": 4184176,
+          "total_edges": 22353984,
+          "changed_patch_edges": 4184176,
+          "total_patch_edges": 22127616,
+          "intersection": 14582016,
+          "union": 18766192,
+          "changed_edge_fraction": 0.1871780887022197,
+          "changed_patch_edge_fraction": 0.18909294159840806,
+          "jaccard_kept_edges": 0.7770364920064763
+        },
+        "C-D": {
+          "changed_edges": 2643248,
+          "total_edges": 22353984,
+          "changed_patch_edges": 2643248,
+          "total_patch_edges": 22127616,
+          "intersection": 15528944,
+          "union": 18172192,
+          "changed_edge_fraction": 0.11824505197820666,
+          "changed_patch_edge_fraction": 0.11945471215697163,
+          "jaccard_kept_edges": 0.8545443499606432
+        }
+      }
+    },
+    "50": {
+      "methods": {
+        "A": {
+          "total_edges": 22353984,
+          "masked_edges": 11379344,
+          "coarse_topk_added_sum": 0.0,
+          "coarse_protection_added_sum": 0.0,
+          "n_samples": 1382976,
+          "measured_sparsity_on_dense_inputs": 0.5090521671662644,
+          "coarse_topk_added_fraction": 0.0,
+          "coarse_protection_added_fraction": 0.0
+        },
+        "B": {
+          "total_edges": 22353984,
+          "masked_edges": 11424928,
+          "coarse_topk_added_sum": 0.0,
+          "coarse_protection_added_sum": 300565.0,
+          "n_samples": 1382976,
+          "measured_sparsity_on_dense_inputs": 0.511091356243254,
+          "coarse_topk_added_fraction": 0.0,
+          "coarse_protection_added_fraction": 0.2173320433615623
+        },
+        "C": {
+          "total_edges": 22353984,
+          "masked_edges": 11429024,
+          "coarse_topk_added_sum": 35906.0,
+          "coarse_protection_added_sum": 0.0,
+          "n_samples": 1382976,
+          "measured_sparsity_on_dense_inputs": 0.5112745898001896,
+          "coarse_topk_added_fraction": 0.025962851126845297,
+          "coarse_protection_added_fraction": 0.0
+        },
+        "D": {
+          "total_edges": 22353984,
+          "masked_edges": 11362736,
+          "coarse_topk_added_sum": 134515.0,
+          "coarse_protection_added_sum": 169937.0,
+          "n_samples": 1382976,
+          "measured_sparsity_on_dense_inputs": 0.5083092123533773,
+          "coarse_topk_added_fraction": 0.09726488384469434,
+          "coarse_protection_added_fraction": 0.12287776505159886
+        }
+      },
+      "pairs": {
+        "A-B": {
+          "changed_edges": 5716336,
+          "total_edges": 22353984,
+          "changed_patch_edges": 5716336,
+          "total_patch_edges": 22127616,
+          "intersection": 8093680,
+          "union": 13810016,
+          "changed_edge_fraction": 0.2557188910934176,
+          "changed_patch_edge_fraction": 0.2583349241056967,
+          "jaccard_kept_edges": 0.586073180508987
+        },
+        "A-C": {
+          "changed_edges": 1079440,
+          "total_edges": 22353984,
+          "changed_patch_edges": 1079440,
+          "total_patch_edges": 22127616,
+          "intersection": 10410080,
+          "union": 11489520,
+          "changed_edge_fraction": 0.04828848405724903,
+          "changed_patch_edge_fraction": 0.04878248067934657,
+          "jaccard_kept_edges": 0.9060500351624785
+        },
+        "A-D": {
+          "changed_edges": 5160320,
+          "total_edges": 22353984,
+          "changed_patch_edges": 5160320,
+          "total_patch_edges": 22127616,
+          "intersection": 8402784,
+          "union": 13563104,
+          "changed_edge_fraction": 0.23084565149550076,
+          "changed_patch_edge_fraction": 0.23320722846961914,
+          "jaccard_kept_edges": 0.6195325199895245
+        },
+        "B-C": {
+          "changed_edges": 6052000,
+          "total_edges": 22353984,
+          "changed_patch_edges": 6052000,
+          "total_patch_edges": 22127616,
+          "intersection": 7901008,
+          "union": 13953008,
+          "changed_edge_fraction": 0.27073473793306824,
+          "changed_patch_edge_fraction": 0.2735043847470961,
+          "jaccard_kept_edges": 0.566258401055887
+        },
+        "B-D": {
+          "changed_edges": 3267696,
+          "total_edges": 22353984,
+          "changed_patch_edges": 3267696,
+          "total_patch_edges": 22127616,
+          "intersection": 9326304,
+          "union": 12594000,
+          "changed_edge_fraction": 0.14617958033789413,
+          "changed_patch_edge_fraction": 0.14767501388310425,
+          "jaccard_kept_edges": 0.7405354930919485
+        },
+        "C-D": {
+          "changed_edges": 4452464,
+          "total_edges": 22353984,
+          "changed_patch_edges": 4452464,
+          "total_patch_edges": 22127616,
+          "intersection": 8731872,
+          "union": 13184336,
+          "changed_edge_fraction": 0.19917988668149714,
+          "changed_patch_edge_fraction": 0.20121751932065343,
+          "jaccard_kept_edges": 0.6622913736421766
+        }
+      }
+    }
+  }
+}
