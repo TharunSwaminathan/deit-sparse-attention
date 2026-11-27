@@ -2,7 +2,7 @@
 
 **Five-slide implementation section | target 4 min 30 sec | draft for team integration**
 
-Results are validation-only and GPU benchmark results. Update the final handoff and held-out status after team approval and actual evaluation.
+Updated November 27 using the official held-out results. Validation diagnostics and synthetic GPU benchmark remain distinct. The explicit dated team approval record and dataset provenance confirmation are still open; coordinate the final handoff with Jiong.
 
 ## Slide 1 — Architecture (60 seconds)
 
@@ -12,9 +12,9 @@ Our implementation modifies attention during inference, using a single fine-tune
 
 We compare four strategies arranged as a two-by-two design. Variant A uses Top-p: it sorts the coarse probabilities and keeps the shortest prefix reaching the specified cumulative probability. Variant B adds similarity protection. We calculate the mean pairwise cosine similarity within each query or key block. If it is below the threshold, we preserve that entire coarse row or column. Variant C takes the union of Top-p and Top-k, guaranteeing a minimum number of retained key blocks in each row, apart from ranking ties. Variant D combines the hybrid rule with the same similarity protection. These choices let us examine both a minimum-count safeguard and a similarity safeguard. To compare methods fairly, we independently calibrate the parameters for approximately 25 and 50 percent sparsity in the selected layers. Because the parameters differ between variants, these comparisons evaluate complete strategies at similar budgets, rather than isolating a causal effect of a single safeguard.
 
-## Slide 3 — Calibration and validation (45 seconds)
+## Slide 3 — Official test results (45 seconds)
 
-We calibrated eight settings on 64 validation images and checked the budgets on all 736 validation images. All eight were within three percentage points of their respective targets. Both dense controls reached 93.75 percent accuracy, and the sparse configurations ranged from 93.61 to 94.02 percent. Those are differences of at most two correctly classified images relative to dense, not evidence of superiority or equivalence. At the lower budget, Top-p retained the most original attention mass and produced the lowest mean relative output error. At the higher budget, Top-p and the hybrid had almost identical output error. Since validation was also used for calibration and selection, we reserve generalization conclusions for the official test set.
+We calibrated eight settings on 64 validation images and checked their budgets on all 736 validation images. On the official 3,669-image test set, dense and unmasked achieved 91.44 percent accuracy. Sparse accuracy ranged from 91.20 to 91.55 percent. A50 masked 49.91 percent of selected-layer edges and reached 91.55 percent accuracy. All sparse-versus-dense paired confidence intervals include zero, so we do not claim superiority or equivalence. Seven of eight budgets transferred within tolerance; B50 reached 53.134 percent. We report that deviation without test-based recalibration.
 
 ## Slide 4 — When to trust block pooling (60 seconds)
 
@@ -22,7 +22,7 @@ To investigate when pooling is reliable, we sampled three validation images per 
 
 ## Slide 5 — Runtime and limitations (45 seconds)
 
-Finally, we measured median forward latency on a Tesla T4 using FP32, batch size one, ten warmups and thirty synchronized timed forwards. Native dense inference took 4.74 milliseconds, while sparse configurations took between 7.33 and 11.24 milliseconds. This is roughly 1.55 to 2.37 times slower because our implementation adds pooling, ranking and masking but still performs dense score and value products. Sparsity is therefore a measure of removed attention entries, not a measured reduction in total model FLOPs or a demonstrated speedup. Our findings are limited to one checkpoint, one dataset and three selected layers. The official held-out test evaluation is still pending approval; the results presented here are validation and benchmark results only. I'll hand over to the evaluation portion of the presentation.
+Finally, our separate Tesla T4 benchmark used FP32, batch size one, ten warmups and thirty synchronized timed forwards. Dense inference took 4.74 milliseconds; sparse variants took 7.33 to 11.24 milliseconds, about 1.55 to 2.37 times slower. Although A50 could ideally save 44.63 million FLOPs per test image by skipping blocks, our prototype still performs dense score and value products. It adds pooling, ranking and masking overhead. The theoretical estimate excludes that overhead and is not measured acceleration. Our findings are limited to one checkpoint, one dataset and three selected layers. I’ll hand over to the team’s final evaluation discussion.
 
 ## Rehearsal reminders
 
@@ -30,4 +30,4 @@ Finally, we measured median forward latency on a Tesla T4 using FP32, batch size
 - Use “percentage points” for accuracy differences.
 - Never describe masked attention as GPU acceleration or statistical equivalence.
 - Figure 06 (full local protection comparisons) is available in the repository for Q&A.
-- Coordinate the held-out results and bibliography with the team before the final presentation.
+- Coordinate the test-result slide with Jiong to avoid duplicate coverage. If asked about provenance, explain that Jiong confirmed freeze use, but dated pre-run approval and independent dataset verification are still open. Never retune based on test data.
