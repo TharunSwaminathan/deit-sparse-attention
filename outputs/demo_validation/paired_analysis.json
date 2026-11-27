@@ -1,0 +1,49 @@
+{
+  "split": "val",
+  "reference": "dense",
+  "n": 32,
+  "configurations": [
+    "dense",
+    "A_50"
+  ],
+  "bootstrap": {
+    "method": "paired image-level percentile, IID resampling",
+    "repetitions": 10000,
+    "seed": 42,
+    "confidence_level": 0.95,
+    "multiplicity_adjusted": false,
+    "numpy_version": "2.5.5"
+  },
+  "input_sha256": {
+    "dense.csv": "82ad2e9d0b52d78d48670094615ef53ebd7299ce768f9b2e78f268295918da1c",
+    "dense.json": "ff8891ce553573e8e4e8499144b0993c5955fa879de00d0beb5baf488fe7bc85",
+    "validation_manifest_sha256": "d11a2c06f57132b8cd6e5d153c545c683f26c5f6f6cee644bf1c9e4ee8c25e65",
+    "A_50.csv": "2e950d3289532ea30afd0573a56b583c037db8b4a720ccc9dc9f000f8a54ae2d",
+    "A_50.json": "38f36aadad93bf24663576b5ba7bb165f6a13ffa792648615aabc244b7866d8d"
+  },
+  "comparisons": {
+    "A_50": {
+      "n": 32,
+      "dense_accuracy": 0.90625,
+      "candidate_accuracy": 0.90625,
+      "accuracy_delta_pp": 0.0,
+      "ci95_delta_pp": [
+        0.0,
+        0.0
+      ],
+      "candidate_only_correct": 0,
+      "dense_only_correct": 0,
+      "both_correct": 29,
+      "both_wrong": 3,
+      "prediction_disagreements": 0,
+      "prediction_disagreement_rate": 0.0,
+      "degenerate_bootstrap": true
+    }
+  },
+  "limitations": [
+    "Intervals are marginal, exploratory, and not adjusted for multiple comparisons.",
+    "One checkpoint; no training-seed variability measured. Degenerate intervals do not prove equivalence.",
+    "CSV/JSON consistency does not verify checkpoint, dataset release, or approved settings; verify run provenance separately.",
+    "Validation pilots are functionality checks, not final inference."
+  ]
+}

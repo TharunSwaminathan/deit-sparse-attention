@@ -1,0 +1,42 @@
+{
+  "split": "val",
+  "variant": "A",
+  "layer_indices": [
+    3,
+    6,
+    9
+  ],
+  "mask_config": {
+    "method": "top_p",
+    "p": 0.87,
+    "top_k": 4,
+    "similarity_threshold": null,
+    "grid_size": 14,
+    "tile_size": 2
+  },
+  "scores": {
+    "n": 32,
+    "loss": 0.3112185001373291,
+    "accuracy": 0.90625,
+    "macro_f1": 0.10184684684684685
+  },
+  "diagnostics": {
+    "retained_mass": 0.8828551471233368,
+    "relative_output_error": 0.15873734404643378,
+    "realized_sparsity": 0.5036517878373464,
+    "coarse_entropy": 3.1416251262029014,
+    "block_similarity": 0.6803733706474304,
+    "topk_added_fraction": 0.0,
+    "protection_added_fraction": 0.0,
+    "protected_query_block_fraction": 0.0,
+    "protected_key_block_fraction": 0.0
+  },
+  "checkpoint": "C:\\Users\\tharu\\Downloads\\SpargeFinalProject\\sparge_pets_starter\\outputs\\dense_full_pilot\\best.pt",
+  "device": "cpu",
+  "prediction_export": {
+    "path": "C:\\Users\\tharu\\Downloads\\deit-demo-20261127-125016\\A_50.csv",
+    "configuration": "A_50",
+    "n": 32,
+    "id_scheme": "official_split:zero_based_index"
+  }
+}

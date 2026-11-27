@@ -1,0 +1,21 @@
+{
+  "split": "val",
+  "variant": "dense",
+  "layer_indices": null,
+  "mask_config": null,
+  "scores": {
+    "n": 32,
+    "loss": 0.32006728649139404,
+    "accuracy": 0.90625,
+    "macro_f1": 0.10184684684684685
+  },
+  "diagnostics": {},
+  "checkpoint": "C:\\Users\\tharu\\Downloads\\SpargeFinalProject\\sparge_pets_starter\\outputs\\dense_full_pilot\\best.pt",
+  "device": "cpu",
+  "prediction_export": {
+    "path": "C:\\Users\\tharu\\Downloads\\deit-demo-20261127-125016\\dense.csv",
+    "configuration": "dense",
+    "n": 32,
+    "id_scheme": "official_split:zero_based_index"
+  }
+}
