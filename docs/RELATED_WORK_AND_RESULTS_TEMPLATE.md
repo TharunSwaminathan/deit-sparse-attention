@@ -1,6 +1,6 @@
 # Related work and final results integration — November 27, 2026
 
-Working material for the team report. Final test metrics are pending; no official test inference was performed to prepare this file. Reference labels are provisional and should be renumbered in the assembled report.
+Working material for the team report. Official test results are now populated from Jiong’s supplied evaluation; no additional test inference was performed to prepare this file. Reference labels are provisional and should be renumbered in the assembled report.
 
 ## Related work (draft for integration)
 
@@ -15,33 +15,27 @@ Vision Transformers treat an image as a sequence of patch embeddings [1]. DeiT d
 5. J. Zhang et al., “SpargeAttention2: Trainable Sparse Attention via Hybrid Top-k+Top-p Masking and Distillation Fine-Tuning,” arXiv:2602.13515v2, 18 October 2026. https://arxiv.org/abs/2602.13515v2 . Cite the uploaded v2; confirm conference record and author list from the final proceedings before changing venue metadata. The earlier proposal lists NeurIPS 2026, but an official paper-specific conference record was not independently confirmed in this review.
 6. T. Dao, D. Y. Fu, S. Ermon, A. Rudra, and C. Ré, “FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness,” NeurIPS, 2022. https://proceedings.neurips.cc/paper/2022/hash/67d57c32e20fd0a7a302cb81d36e40d5-Abstract.html
 
-## Held-out results table template
+## Verified held-out results table
 
-Validation values below come from `docs/Tharun_Final_Validation_and_T4_GPU_Results.csv` (736 images). The test columns are deliberately pending (3,669 official test images per configuration). Accuracy differences and confidence intervals are candidate minus dense in percentage points (pp), not relative percentages.
+Validation: 736 images. Official test: 3,669 images. Accuracy differences are candidate minus dense (pp).
 
 | Configuration | Val sparsity (%) | Val accuracy (%) | Test sparsity (%) | Test accuracy (%) | Test macro-F1 | Test delta (pp) | 95% paired CI (pp) |
 |---|---:|---:|---:|---:|---:|---:|---|
-| dense | 0.00 | 93.75 | Pending | Pending | Pending | — | — |
-| unmasked | 0.00 | 93.75 | Pending | Pending | Pending | Pending | Pending |
-| A_25 | 23.74 | 93.89 | Pending | Pending | Pending | Pending | Pending |
-| B_25 | 25.68 | 93.89 | Pending | Pending | Pending | Pending | Pending |
-| C_25 | 23.98 | 93.61 | Pending | Pending | Pending | Pending | Pending |
-| D_25 | 25.55 | 94.02 | Pending | Pending | Pending | Pending | Pending |
-| A_50 | 49.85 | 93.75 | Pending | Pending | Pending | Pending | Pending |
-| B_50 | 52.62 | 93.75 | Pending | Pending | Pending | Pending | Pending |
-| C_50 | 50.17 | 93.89 | Pending | Pending | Pending | Pending | Pending |
-| D_50 | 51.76 | 93.75 | Pending | Pending | Pending | Pending | Pending |
+| dense | 0.00 | 93.75 | 0.00 | 91.44 | 0.9126 | — | — |
+| unmasked | 0.00 | 93.75 | 0.00 | 91.44 | 0.9126 | 0.000 | [0.000, 0.000] |
+| A_25 | 23.74 | 93.89 | 23.82 | 91.55 | 0.9137 | +0.109 | [0.000, +0.245] |
+| B_25 | 25.68 | 93.89 | 25.79 | 91.55 | 0.9137 | +0.109 | [0.000, +0.245] |
+| C_25 | 23.98 | 93.61 | 24.02 | 91.50 | 0.9131 | +0.055 | [-0.082, +0.218] |
+| D_25 | 25.55 | 94.02 | 25.78 | 91.44 | 0.9126 | 0.000 | [-0.191, +0.191] |
+| A_50 | 49.85 | 93.75 | 49.91 | 91.55 | 0.9137 | +0.109 | [-0.191, +0.409] |
+| B_50 | 52.62 | 93.75 | 53.13* | 91.20 | 0.9101 | -0.245 | [-0.627, +0.136] |
+| C_50 | 50.17 | 93.89 | 50.24 | 91.39 | 0.9121 | -0.055 | [-0.354, +0.245] |
+| D_50 | 51.76 | 93.75 | 52.09 | 91.22 | 0.9103 | -0.218 | [-0.545, +0.136] |
 
-## Acceptance checklist for Jiong's results
+*B_50 realized 53.133988% sparsity, 0.133988 pp above the 53% upper limit. All other sparse configurations met the ±3 pp tolerance. Dense/unmasked sparsity is zero by construction. CIs are marginal paired percentile intervals, not adjusted for multiplicity; all contain zero.
 
-- Confirm team freeze approval, exact evaluated code revision, checkpoint/calibration/manifest fingerprints and dataset provenance. Merged main revision verified on Windows: `2915614fdcd4e219b7c039a96cdb8e073f48bc11`; 56 tests and dry run passed. This is not itself approval.
-- Request ten aggregate JSONs, ten aligned prediction CSVs, `paired_analysis.json` and run provenance. Verify 3,669 unique expected test IDs per configuration, aligned labels, correct counts and aggregate metrics.
-- Read test accuracy and macro-F1 from scores; use measured sparsity from diagnostics for sparse variants and structural zero for dense/unmasked. Report actual realized sparsity even outside tolerance; do not retune.
-- Read delta and pointwise 95% percentile CI from paired analysis. Record wins/losses and prediction disagreements. No multiple-comparison adjustment or training-seed uncertainty; a CI containing zero does not prove equivalence.
-- Keep separate the 736-image validation study, 111-image diagnostics, 32-image demo and synthetic T4 benchmark. Do not label any of these as test outcomes.
-- Compare A/B, C/D, A/C and B/D at each budget descriptively; calibrated parameters differ, and comparisons do not identify causal effects of a rule. For inferential direct comparisons between sparse variants, predefine the analysis and distinguish it from the dense-referenced planned analysis.
-- Replace pending cells only after verification. Update conclusions with supported results; do not claim a new adaptive policy, speedup or statistical equivalence.
+## Final report assembly
 
-## Final report assembly notes
+The 50 archive fingerprints, test IDs, labels, prediction-derived metrics and paired results were verified in the independent audit. The recorded source revision is `b1ebf0736004f8564c26803636467b451cf1ea16`. Jiong confirmed use of the pre-run freeze on November 27; the actual dated team approval record and independent dataset provenance check remain open. No test-based tuning. See `docs/OFFICIAL_TEST_RESULTS_REVIEW.md`.
 
-Keep the main table and accuracy–sparsity plot centered on test results; put validation calibration detail and exploratory diagnostics in separate clearly labeled sections. Keep the T4 latency table as a separate benchmark. The revised proposal mentioned ideal block-skipping FLOP estimates; none have been reported in the current prototype results, so explicitly note this scope deviation rather than claim completed estimates. Reconcile training details and page budget with Dev and Jiong. The live demo is a functionality check, not an additional held-out experiment.
+Use the official test table and Jiong’s test plots in the main results section. Keep validation calibration, the 111-image diagnostic study, the 32-image demo and the synthetic T4 benchmark separate. Compare complete calibrated strategies, not isolated causal effects. Ideal block-skipping estimates are now documented in `docs/IDEAL_FLOP_ANALYSIS.md` (validation) and `docs/THARUN_REPORT_SECTIONS.md` (test); do not treat them as measured speedup. Reference numbering, conference metadata for SpargeAttention2, final page allocation and Dev’s training/data details must be coordinated at assembly.

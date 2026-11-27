@@ -1,8 +1,8 @@
-# When to Trust Block Pooling? — methodology and implementation draft
+# When to Trust Block Pooling? — methodology, implementation and results
 
-**Team report contribution | 26 November 2026 | Reviewed draft for integration**
+**Team report contribution | 27 November 2026 | Updated draft for team integration**
 
-This draft describes the implemented V4 methods and completed validation experiments. The official held-out test results and team-approved evaluation revision remain pending. Section numbers and bibliography numbering should be assigned when the team assembles the final report.
+This contribution integrates the completed V4 validation experiments and official held-out results supplied by Jiong on 27 November. Numerical verification has passed; explicit dated pre-run team approval and dataset-release provenance remain to be confirmed. Section numbering, references and page allocation are for the team to finalize.
 
 ## Methodology
 
@@ -50,7 +50,7 @@ To compare rules at comparable attention sparsity, we use target removal fractio
 | C_50 | 0.85 | 12 | — | 50.17 |
 | D_50 | 0.65 | 16 | 0.50 | 51.76 |
 
-The parameters are proposed for freezing before official test evaluation. They are independently calibrated by method; comparisons therefore characterize complete strategies at similar nominal budgets, not causal effects of adding one rule while holding all parameters fixed.
+These validation-selected parameters were recorded in the freeze document before held-out evaluation; Jiong’s archived test configurations match them. They are independently calibrated by method; comparisons therefore characterize complete strategies at similar nominal budgets, not causal effects of adding one rule while holding all parameters fixed.
 
 ### Evaluation and diagnostics
 
@@ -60,7 +60,7 @@ A separate validation-only diagnostic experiment sampled three images per breed 
 
 ### Runtime and reproducibility
 
-Latency was measured using synthetic device-resident FP32 inputs at batch size one, with diagnostics disabled. The Tesla T4 experiment used 10 warm-up forward passes and 30 measured repetitions, with CUDA synchronization before and after each timed forward pass; the median is reported. The CPU experiment used five warm-ups and 20 measured repetitions. Timings include mask construction and full-model forward execution, but exclude data loading, preprocessing and host-device transfer. Synthetic inputs have the same shape and sampling distribution; they were not explicitly held identical between all benchmark calls. Code, calibration JSON, split manifest and aggregate results are versioned. The trained weights are distributed separately and verified by SHA-256. The optional per-image export records stable official-split indices, labels, predicted classes and correctness for aligned comparison. The prediction export and subsequent paired-analysis and official-workflow utilities are covered by the expanded 56-test suite, which passed on Windows. A 32-image validation-only integration pilot verified unique IDs, matched labels and CSV/JSON accuracy for dense and A_50; all 32 predicted classes agreed. This pilot is not representative of the entire validation set. The official test launcher verifies frozen input fingerprints, prints the ten evaluation commands in dry-run mode, and requires an explicit approved revision and human-supplied approval reference for execution. The post-commit dry run passed at revision `7d09ab19c18412a2554400b8962ce79c7a0f09d7` with a clean working tree; that revision is not yet established as team-approved.
+Latency was measured using synthetic device-resident FP32 inputs at batch size one, with diagnostics disabled. The Tesla T4 experiment used 10 warm-up forward passes and 30 measured repetitions, with CUDA synchronization before and after each timed forward pass; the median is reported. The CPU experiment used five warm-ups and 20 measured repetitions. Timings include mask construction and full-model forward execution, but exclude data loading, preprocessing and host-device transfer. Synthetic inputs have the same shape and sampling distribution; they were not explicitly held identical between all benchmark calls. Code, calibration JSON, split manifest and aggregate results are versioned. The trained weights are distributed separately and verified by SHA-256. The optional per-image export records stable official-split indices, labels, predicted classes and correctness for aligned comparison. The prediction export and subsequent paired-analysis and official-workflow utilities are covered by the expanded 56-test suite, which passed on Windows. A 32-image validation-only integration pilot verified unique IDs, matched labels and CSV/JSON accuracy for dense and A_50; all 32 predicted classes agreed. This pilot is not representative of the entire validation set. The official test launcher verifies frozen input fingerprints, prints the ten evaluation commands in dry-run mode, and requires an explicit approved revision and human-supplied approval reference for execution. The merged Windows implementation (`2915614fdcd4e219b7c039a96cdb8e073f48bc11`) passed all 56 tests and dry-run preflight. Jiong’s actual official test run used the integrated feature-branch revision `b1ebf0736004f8564c26803636467b451cf1ea16`, not the merge commit. The archived run records a clean checkout, the frozen input fingerprints, batch size 16, zero workers, FP32 and a Tesla T4 GPU, with timm 1.0.31, PyTorch 2.14.1+cu130 and bicubic resize to 248 followed by center crop to 224 and ImageNet normalization. The complete test execution and paired analysis took about seven minutes; this is not a per-image latency benchmark.
 
 ## Validation results and discussion (coordinate with results-section owner)
 
@@ -70,14 +70,46 @@ The block-level experiment indicates a layer-dependent relationship between entr
 
 The GPU median latency was 4.739 ms for dense and 5.235 ms for the unmasked wrapper, compared with 7.327–11.244 ms for sparse variants (1.55–2.37 times the dense latency). The prototype computes dense token-level scores and dense attention-value products and incurs extra pooling, ranking and masking operations. It therefore demonstrates accuracy/fidelity trade-offs, not actual GPU acceleration.
 
-## Limitations and final evaluation plan
+## Official held-out test results
 
-The findings are limited to one model architecture, one fine-tuned checkpoint, one dataset, three selected attention layers, two nominal budgets and the measured hardware/protocol. Sparsity refers to attention entries in modified layers, not a measured reduction in total model FLOPs. Even an ideal sparse attention kernel would not remove the dense projections or MLP costs; no theoretical FLOP reduction or measured sparse-kernel speedup is claimed here. The 111-image diagnostics are exploratory and correlations do not isolate causal effects; differences in realized local sparsity and separately calibrated parameters complicate attribution. Validation results were obtained on data used for calibration and model/layer selection. The official test evaluation must use the approved checkpoint, split, parameters and revision without test-based retuning. Report actual test sparsity even when outside tolerance. Aligned per-image predictions will support accuracy differences (candidate minus dense, in percentage points), paired percentile bootstrap intervals (10,000 IID image-level resamples, seed 42, nominal 95% coverage), and prediction disagreement counts. These intervals are marginal, exploratory, unadjusted for multiplicity and conditional on a single checkpoint; zero-width intervals do not establish equivalence. The implemented protocol remains subject to team approval and the test results remain to be supplied by the evaluation lead. The dry run verifies commands and input fingerprints, not dataset contents, GPU availability or successful held-out inference. No official test outcomes are included in this draft.
+**Table 1.** Classification on the 3,669-image official test split using the eight frozen configurations and two controls. Accuracy differences are candidate minus dense, in percentage points. No test-based recalibration was performed in the supplied run.
+
+| Configuration | Test sparsity (%) | Test accuracy (%) | Macro-F1 | Δ accuracy (pp) | 95% paired CI (pp) |
+|---|---:|---:|---:|---:|---|
+| dense | 0.00 | 91.44 | 0.9126 | — | — |
+| unmasked | 0.00 | 91.44 | 0.9126 | 0.000 | [0.000, 0.000] |
+| A_25 | 23.82 | 91.55 | 0.9137 | +0.109 | [0.000, +0.245] |
+| B_25 | 25.79 | 91.55 | 0.9137 | +0.109 | [0.000, +0.245] |
+| C_25 | 24.02 | 91.50 | 0.9131 | +0.055 | [-0.082, +0.218] |
+| D_25 | 25.78 | 91.44 | 0.9126 | 0.000 | [-0.191, +0.191] |
+| A_50 | 49.91 | 91.55 | 0.9137 | +0.109 | [-0.191, +0.409] |
+| B_50 | 53.13* | 91.20 | 0.9101 | -0.245 | [-0.627, +0.136] |
+| C_50 | 50.24 | 91.39 | 0.9121 | -0.055 | [-0.354, +0.245] |
+| D_50 | 52.09 | 91.22 | 0.9103 | -0.218 | [-0.545, +0.136] |
+
+*B_50 realized 53.133988% sparsity, 0.133988 pp above the 53% upper limit. All other sparse configurations met the ±3 pp tolerance. Dense/unmasked sparsity is zero by construction. CIs are marginal paired percentile intervals, not adjusted for multiplicity; all contain zero.
+
+The native dense model achieved 91.44% accuracy (3,355/3,669); the manual unmasked control reproduced every predicted class. Sparse accuracy ranged from 91.20% to 91.55%, with changes of −0.245 to +0.109 pp relative to dense. A_50 achieved 49.91% realized sparsity and 91.55% accuracy (3,359 correct), with 40 predicted-label disagreements (98.91% agreement). The observed +0.109 pp change has a marginal 95% CI of [−0.191, +0.409] pp. None of the eight sparse-versus-dense intervals excludes zero. These results support small observed accuracy changes for this checkpoint, not statistical superiority or equivalence.
+
+For uncertainty, the paired analysis resamples aligned test images with replacement (10,000 IID resamples, seed 42) and reports percentile intervals for candidate-minus-dense accuracy. These pointwise intervals are exploratory, not multiplicity-adjusted, and do not capture training-seed variability. The zero-width unmasked interval is a consequence of identical predictions, not proof of model equivalence in general. Independent checks of the supplied archive, all 36,690 class predictions, aggregate accuracy, macro-F1 and paired statistics passed (see `docs/OFFICIAL_TEST_RESULTS_REVIEW.md`). Loss and attention diagnostics cannot be reconstructed from predicted labels alone.
+
+### Fidelity and interpretation
+
+At the 50% target, A_50 and C_50 retained 88.39% and 88.53% of original dense attention mass, with relative output errors of 15.50% and 15.53%. B_50 and D_50 retained 79.81% and 84.64%, with errors of 24.60% and 20.04%. The protected strategies did not consistently improve aggregate accuracy or fidelity under their calibrated settings. Because realized budgets and parameter choices differ, this comparison cannot isolate the causal effect of protection. The validation-only block diagnostics suggest that the usefulness of entropy and similarity is layer-dependent; we did not repeat those diagnostic experiments on test images. The small B_50 budget deviation is reported as observed, not corrected using test information.
+
+### Ideal arithmetic savings versus measured runtime
+
+Counting one multiply-accumulate as two FLOPs, the dense QKᵀ and AV products require 4N²d = 29.81 MFLOPs per layer for N = 197 and embedding width d = 192. For measured sparsity s across three modified layers, hypothetical gross block-skipping savings are 3s × 4N²d. A_50's test sparsity implies 44.63 MFLOPs saved per image, or 12.48% of attention matrix-product arithmetic across all twelve layers and about 1.78% of the restricted dense-model matrix-product estimate (2,507.00 MFLOPs). CLS connections are already counted in the measured token-mask sparsity. The estimate excludes mask generation, non-matrix operations, memory traffic and sparse-kernel overhead. The actual prototype skips neither dense QKᵀ nor AV, and the separate synthetic Tesla T4 benchmark measured slower execution for all sparse methods (1.55–2.37× dense latency). This is not evidence of achieved FLOP reduction or acceleration.
+
+## Limitations and conclusion
+
+Our results are restricted to one architecture, one fine-tuned checkpoint, one dataset, three selected layers and two nominal sparsity budgets. Validation data informed checkpoint, layer and masking selection; the official test data were used to evaluate the recorded configurations, not to select new settings. Seven of eight configurations transferred within tolerance. The block-level correlations are exploratory, based on correlated observations from 111 validation images; separately calibrated parameters and local sparsity differences limit causal attribution. We find that coarse block pooling can support substantial removal of attention edges with small observed accuracy changes, but that aggregate fidelity and protection benefits depend on layer and strategy. A layer-aware allocation policy and an efficient sparse kernel are future work, not implemented contributions.
+
+Jiong confirmed on 27 November that he used the pre-run experimental freeze. The run records the approval reference as `Team approval`, but the notebook does not identify the dated pre-execution approval or approving participants. The team still needs to establish the actual approval record and independently confirm the dataset release and contents. If explicit pre-run approval cannot be established, disclose this rather than backdate it. The audit verifies the delivered artifacts, not independent GPU inference or the original image bytes.
 
 ## Integration notes (remove from final report)
 
-- Dev: confirm exact training hyperparameters, preprocessing, model selection and bibliography entries for DeiT and Oxford-IIIT Pet.
-- Jiong: insert held-out test results, paired uncertainty analysis, final figures and agreed test protocol; do not treat the 32-image pilot as a research result.
-- Team: cite the original source of the sparse-attention inspiration and distinguish this prototype from its optimized implementation. Check references and page budget together. Do not imply a new entropy-adaptive method was implemented.
-- Evidence in repository: `sparse_pet/masking.py`, `attention.py`, `selection.py`, `calibrate.py`, `evaluate.py`, `predictions.py`, `block_diagnostics.py`; `outputs/calibration_64_v4.json`, `outputs/split_manifest.json`, `outputs/validation_v4/`, `outputs/mask_overlap_val.json`, `outputs/gpu_latency_v4.json`, `outputs/block_diagnostics.json`; `docs/EXPERIMENT_FREEZE.md`, `docs/BLOCK_DIAGNOSTIC_RESULTS.md`, and `docs/Tharun_Final_Validation_and_T4_GPU_Results.csv`.
-- Checkpoint SHA-256: `ca12f33e158e30c08279ff8be5bd5b2a69be75e688a01eee59195fc3f198cb06`. Diagnostic implementation and results pushed in commit `7f5ca7a`; paired analysis in `fb677c7`, six reproducible figures in `c12617c`, and the official evaluation workflow in `7d09ab1`. See `docs/PAIRED_ANALYSIS.md`, `docs/RESEARCH_FIGURES.md` and `docs/OFFICIAL_TEST_WORKFLOW.md`. PR #1 review/merge and final freeze approval are not established by this draft.
+- Dev: verify training hyperparameters, preprocessing and official dataset provenance. Jiong: preserve the executed notebook and original `official_test_v4_001.zip`; integrate the raw outputs, figures and run provenance via his PR. Do not distribute the dataset or checkpoint in the public repository.
+- Use Jiong’s `derived/test_accuracy_vs_sparsity` and `derived/test_accuracy_delta_ci` figures as the primary held-out plots; caption their zoomed axes and pointwise intervals. Keep validation calibration, block diagnostics and synthetic GPU benchmark distinct. See `docs/RELATED_WORK_AND_RESULTS_TEMPLATE.md` for the combined table and provisional references, `docs/IDEAL_FLOP_ANALYSIS.md` for the validation estimate, and `docs/OFFICIAL_TEST_RESULTS_REVIEW.md` for audit detail.
+- Coordinate the final 6–8 page team report and presentation; this contribution is an integration draft, not the complete submission. Do not claim an implemented adaptive policy, statistical equivalence, or acceleration. Confirm references and page budget with the team.
+- Frozen checkpoint SHA-256: `ca12f33e158e30c08279ff8be5bd5b2a69be75e688a01eee59195fc3f198cb06`. Test evaluation revision: `b1ebf0736004f8564c26803636467b451cf1ea16`. The recorded code and input fingerprints are preserved in the archive. The archived raw result files are authoritative; do not change their contents.
